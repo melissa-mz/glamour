@@ -19,7 +19,7 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
 <header id="mainHeader">
   <div class="logo">GLAMOUR <span>CLINIC</span></div>
 
-  <!-- BOUTON HAMBURGER (s'affiche uniquement sur mobile) -->
+  <!-- BOUTON HAMBURGER -->
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span>
     <span></span>
@@ -73,12 +73,11 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
 </header>
 
 <script>
-  // --- MENU HAMBURGER MOBILE ---
+  // --- MENU HAMBURGER ---
   const header = document.getElementById('mainHeader');
   const hamburger = document.getElementById('hamburger');
   const mainNav = document.getElementById('mainNav');
 
-  // Ouvrir / Fermer le menu principal
   hamburger.addEventListener('click', () => {
     mainNav.classList.toggle('open');
   });
@@ -94,7 +93,7 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
   document.querySelectorAll('.has-dropdown > a').forEach(dropdownLink => {
     dropdownLink.addEventListener('click', function(e) {
       if (window.innerWidth <= 900) {
-        e.preventDefault(); // Empêche la navigation si c'est un parent
+        e.preventDefault();
         this.parentElement.classList.toggle('open');
       }
     });
