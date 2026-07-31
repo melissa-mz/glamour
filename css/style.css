@@ -33,6 +33,30 @@ nav a:hover::after{width:100%;}
 .nav-cta:hover{background:var(--or);}
 .nav-cta::after{content:none !important;}
 
+/* --- BOUTON HAMBURGER --- */
+.hamburger {
+  display: none; /* Caché sur ordinateur */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 5px;
+  z-index: 110;
+}
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--charbon);
+  transition: all 0.3s ease;
+}
+
+/* Animation du burger en croix quand le menu est ouvert */
+#mainNav.open .hamburger span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+#mainNav.open .hamburger span:nth-child(2) { opacity: 0; }
+#mainNav.open .hamburger span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
 .has-dropdown{position:relative;}
 .has-dropdown > a{display:inline-flex;align-items:center;gap:6px;}
 .has-dropdown .caret{transition:transform .3s ease;}
@@ -366,14 +390,14 @@ footer ul li a:hover{color:var(--bordeaux);}
   .footer-grid{grid-template-columns:1fr 1fr;}
   section{padding:80px 0;}
 
-  .cat-hero-wow { padding: 140px 0 60px; min-height: auto; }
+  .cat-hero-wow { padding: 100px 0 50px; min-height: 300px; }
   .wow-title { font-size: clamp(1.8rem, 5vw, 2.8rem); }
   .services-grid-showcase { grid-template-columns: 1fr; gap: 30px; }
   .wow-circle-1, .wow-circle-2 { display: none; } /* Masquer les cercles sur mobile */
 }
 
 @media (max-width:480px){
-  .cat-hero-wow { padding: 120px 0 50px; }
+  .cat-hero-wow { padding: 80px 0 40px; min-height: 250px; }
   .wow-title { font-size: 1.8rem; }
   .wow-intro { font-size: 1rem; }
   .btn-wow-primary { padding: 14px 26px; font-size: 0.7rem; border-radius: 40px; }

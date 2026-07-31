@@ -13,13 +13,20 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
 <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
 </head>
 <body>
 
 <header id="mainHeader">
   <div class="logo">GLAMOUR <span>CLINIC</span></div>
-  <nav>
+
+  <!-- BOUTON HAMBURGER (s'affiche uniquement sur mobile) -->
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav id="mainNav">
     <ul>
       <li><a href="index.php#about">Accueil</a></li>
       <li><a href="botox.php">Botox</a></li>
@@ -44,7 +51,7 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
           <a href="lasers.php#lasers-co2">Lasers CO2</a>
         </div>
       </li>
-            <li class="has-dropdown">
+      <li class="has-dropdown">
         <a href="skincare.php">Skincare
           <svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
@@ -64,3 +71,44 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
   </nav>
   <a class="nav-cta" href="<?php echo wa_link($whatsapp_number, $msg_default); ?>" target="_blank" rel="noopener">Rendez-vous</a>
 </header>
+
+<script>
+  // --- MENU HAMBURGER MOBILE ---
+  const header = document.getElementById('mainHeader');
+  const hamburger = document.getElementById('hamburger');
+  const mainNav = document.getElementById('mainNav');
+
+  // Ouvrir / Fermer le menu principal
+  hamburger.addEventListener('click', () => {
+    mainNav.classList.toggle('open');
+  });
+
+  // Fermer le menu quand on clique sur un lien
+  document.querySelectorAll('#mainNav a').forEach(link => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+    });
+  });
+
+  // Gestion des sous-menus (dropdowns) sur mobile
+  document.querySelectorAll('.has-dropdown > a').forEach(dropdownLink => {
+    dropdownLink.addEventListener('click', function(e) {
+      if (window.innerWidth <= 900) {
+        e.preventDefault(); // Empêche la navigation si c'est un parent
+        this.parentElement.classList.toggle('open');
+      }
+    });
+  });
+
+  // --- HEADER SCROLLÉ ---
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 30);
+  });
+
+  // --- RÉVÉLATION AU SCROLL ---
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  revealEls.forEach(el => io.observe(el));
+</script>

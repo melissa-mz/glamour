@@ -9,8 +9,7 @@ $hero_bg = isset($hero_bg_images[$cat_key]) ? $hero_bg_images[$cat_key] : '';
 ?>
 
 <!-- HERO WOW MODERNE (TYPO SOFT) AVEC PHOTO DE FOND -->
-<section class="cat-hero-wow" style="<?php echo $hero_bg ? 'background-image:url(' . $hero_bg . ');background-size:cover;background-position:center;background-attachment:fixed;' : ''; ?>">
-  <div class="container">
+<section class="cat-hero-wow" style="<?php echo $hero_bg ? 'background-image:url(' . $hero_bg . ');background-size:cover;background-position:center;' : ''; ?>">  <div class="container">
     <div class="hero-wow-content">
       <!-- Cercles décoratifs (s'affichent seulement si PAS de photo) -->
       <?php if(!$hero_bg): ?>
