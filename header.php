@@ -69,6 +69,8 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
       <li><a href="index.php#location">Nous trouver</a></li>
     </ul>
   </nav>
+
+  <!-- BOUTON RENDEZ-VOUS (AJOUTÉ ICI) -->
   <a class="nav-cta" href="<?php echo wa_link($whatsapp_number, $msg_default); ?>" target="_blank" rel="noopener">Rendez-vous</a>
 </header>
 
