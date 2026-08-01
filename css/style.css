@@ -129,7 +129,7 @@ section{padding:130px 0;}
 .btn-insta-solid:hover{transform:translateY(-2px);filter:brightness(1.06);}
 
 /* ---------- FOOTER (BEIGE) + ICÔNES RESEAUX ---------- */
-footer{background:var(--beige);color:var(--charbon);padding:70px 0 30px;border-top:1px solid rgba(0,0,0,0.04);}
+footer{background:var(--blanc-casse);color:var(--charbon);padding:70px 0 30px;border-top:1px solid rgba(0,0,0,0.04);}
 .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
 footer h4{font-family:'Work Sans',sans-serif;font-weight:700;color:var(--charbon);font-size:1.05rem;margin-bottom:20px;}
 footer .logo{margin-bottom:16px;}
@@ -154,7 +154,7 @@ footer ul li a:hover{color:var(--bordeaux);}
 
 /* --- CATEGORY HERO WOW (Beige, typo fine et douce) --- */
 .cat-hero-wow {
-  background: var(--beige); /* Ton beige */
+  background: var(--blanc-casse); /* Fond aligné sur la section témoignages */
   color: var(--charbon);
   padding: 180px 0 90px;
   position: relative;
@@ -384,7 +384,7 @@ footer ul li a:hover{color:var(--bordeaux);}
    ============================================================ */
 
 .services-grands-carres {
-  background: var(--beige); /* Fond de section en BEIGE */
+  background: var(--blanc-casse); /* Fond aligné sur la section témoignages */
   padding: 100px 0 120px;
 }
 
@@ -520,7 +520,7 @@ footer ul li a:hover{color:var(--bordeaux);}
   min-height: 420px; /* Hauteur du Hero */
   display: flex;
   align-items: center;
-  background-color: var(--beige); /* Fallback si pas d'image */
+  background-color: var(--blanc-casse); /* Fallback si pas d'image */
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -718,7 +718,7 @@ html{scrollbar-width:thin;scrollbar-color:var(--bordeaux) var(--beige);}
 .divider-orn span{width:6px;height:6px;border-radius:50%;background:var(--or);}
 
 /* --- Barre de confiance / chiffres clés --- */
-.trust-bar{background:var(--beige);padding:56px 0;border-top:1px solid rgba(0,0,0,0.05);border-bottom:1px solid rgba(0,0,0,0.05);}
+.trust-bar{background:var(--blanc-casse);padding:56px 0;border-top:1px solid rgba(0,0,0,0.05);border-bottom:1px solid rgba(0,0,0,0.05);}
 .trust-bar .container{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center;}
 .trust-item b{display:block;font-family:'Jost',sans-serif;font-weight:500;font-size:2.2rem;color:var(--bordeaux);line-height:1;margin-bottom:8px;}
 .trust-item span{display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gris);font-weight:600;}
@@ -828,7 +828,7 @@ html{scrollbar-width:thin;scrollbar-color:var(--bordeaux) var(--beige);}
 .cert-item svg{width:20px;height:20px;flex-shrink:0;}
 
 /* --- FAQ en accordéon (natif, sans JS) --- */
-.faq{background:var(--beige);padding:120px 0;}
+.faq{background:var(--blanc-casse);padding:120px 0;}
 .faq-list{max-width:760px;margin:0 auto;}
 .faq-item{background:var(--blanc);border-radius:16px;margin-bottom:14px;overflow:hidden;}
 .faq-item summary{
@@ -909,7 +909,7 @@ body{animation:pageFadeIn .5s ease;}
 /* ============================================================
    POURQUOI NOUS CHOISIR
    ============================================================ */
-.why-us{background:var(--beige);padding:120px 0;}
+.why-us{background:var(--blanc-casse);padding:120px 0;}
 .why-us-grid{display:grid;grid-template-columns:0.8fr 1.2fr;gap:80px;align-items:start;}
 .why-us-intro{position:sticky;top:130px;}
 .why-us-intro h2{font-size:clamp(1.9rem,3vw,2.5rem);margin:14px 0 18px;color:var(--charbon);}
@@ -925,7 +925,7 @@ body{animation:pageFadeIn .5s ease;}
 /* ============================================================
    GALERIE CLINIQUE — mosaïque photo
    ============================================================ */
-.clinic-gallery{background:var(--beige);padding:120px 0;}
+.clinic-gallery{background:var(--blanc-casse);padding:120px 0;}
 .clinic-gallery-grid{display:grid;grid-template-columns:0.7fr 1.3fr;gap:80px;align-items:center;}
 .clinic-gallery-intro h2{font-size:clamp(1.9rem,3vw,2.5rem);margin:14px 0 22px;color:var(--charbon);}
 .clinic-gallery-intro p{font-size:1rem;line-height:1.85;color:var(--gris);max-width:340px;}
@@ -1171,7 +1171,7 @@ section h2 {
 /* ============================================================
    ESPACE WOW — une seule photo, typographie éditoriale
    ============================================================ */
-.espace-wow{background:var(--beige);padding:150px 0;position:relative;overflow:hidden;}
+.espace-wow{background:var(--blanc-casse);padding:150px 0;position:relative;overflow:hidden;}
 
 .espace-watermark{
   position:absolute;top:-30px;left:-8px;z-index:0;
