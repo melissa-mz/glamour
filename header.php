@@ -69,14 +69,10 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
       <li><a href="index.php#location">Nous trouver</a></li>
     </ul>
   </nav>
-
-  <!-- BOUTON RENDEZ-VOUS (AJOUTÉ ICI) -->
-  <a class="nav-cta" href="<?php echo wa_link($whatsapp_number, $msg_default); ?>" target="_blank" rel="noopener">Rendez-vous</a>
 </header>
 
 <script>
-  // --- MENU HAMBURGER ---
-  const header = document.getElementById('mainHeader');
+  // --- MENU HAMBURGER (uniquement le menu mobile ici) ---
   const hamburger = document.getElementById('hamburger');
   const mainNav = document.getElementById('mainNav');
 
@@ -100,16 +96,5 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
       }
     });
   });
-
-  // --- HEADER SCROLLÉ ---
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 30);
-  });
-
-  // --- RÉVÉLATION AU SCROLL ---
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {threshold:0.15});
-  revealEls.forEach(el => io.observe(el));
+  
 </script>

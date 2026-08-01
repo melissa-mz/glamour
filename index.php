@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__ . '/config.php';
 $page_title = "Glamour Clinic — Dr. Draoui Sadjia | Médecine Esthétique & Laser, Réghaïa";
 require __DIR__ . '/header.php';
@@ -190,6 +191,7 @@ require __DIR__ . '/header.php';
     </div>
   </div>
 </section>
+
 
 <section class="testimonials">
   <div class="container">

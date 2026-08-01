@@ -83,10 +83,12 @@
     <i class="fa-brands fa-whatsapp"></i>
 </a>
 
-
 <script>
+  // Seul et unique endroit où ces scripts sont déclarés sur toute la page.
   const header = document.getElementById('mainHeader');
-  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 30));
+  if (header) {
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 30));
+  }
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
