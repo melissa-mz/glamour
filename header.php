@@ -31,7 +31,7 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
       <li><a href="index.php#about">Accueil</a></li>
       <li><a href="botox.php">Botox</a></li>
       <li class="has-dropdown">
-        <a href="filler.php">Filler
+        <a href="filler.php" class="dropdown-toggle">Filler
           <svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <div class="dropdown">
@@ -43,7 +43,7 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
         </div>
       </li>
       <li class="has-dropdown">
-        <a href="lasers.php">Lasers
+        <a href="lasers.php" class="dropdown-toggle">Lasers
           <svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <div class="dropdown">
@@ -52,7 +52,7 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
         </div>
       </li>
       <li class="has-dropdown">
-        <a href="skincare.php">Skincare
+        <a href="skincare.php" class="dropdown-toggle">Skincare
           <svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <div class="dropdown">
@@ -80,15 +80,17 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
     mainNav.classList.toggle('open');
   });
 
-  // Fermer le menu quand on clique sur un lien
-  document.querySelectorAll('#mainNav a').forEach(link => {
+  // Fermer le menu seulement pour les vrais liens de navigation
+  // (pas ceux qui servent juste à ouvrir/fermer un sous-menu, ex: "Skincare")
+  document.querySelectorAll('#mainNav a:not(.dropdown-toggle)').forEach(link => {
     link.addEventListener('click', () => {
       mainNav.classList.remove('open');
     });
   });
 
-  // Gestion des sous-menus (dropdowns) sur mobile
-  document.querySelectorAll('.has-dropdown > a').forEach(dropdownLink => {
+  // Gestion des sous-menus (dropdowns) sur mobile — reste ouvert tant qu'on n'a pas
+  // cliqué ailleurs ou fermé le menu au X du hamburger
+  document.querySelectorAll('.dropdown-toggle').forEach(dropdownLink => {
     dropdownLink.addEventListener('click', function(e) {
       if (window.innerWidth <= 900) {
         e.preventDefault();
@@ -96,5 +98,7 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
       }
     });
   });
-  
+  // NOTE : le scroll du header et la révélation des sections (.reveal)
+  // sont gérés une seule fois, dans footer.php (à la fin de la page).
+  // Ne pas les redéclarer ici pour éviter un conflit de variables JS.
 </script>
