@@ -30,42 +30,9 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
     <ul>
       <li><a href="index.php#about">Accueil</a></li>
       <li><a href="botox.php">Botox</a></li>
-      <li class="has-dropdown">
-        <a href="filler.php" class="dropdown-toggle">Filler
-          <svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <div class="dropdown">
-          <a href="filler.php#filler-levres">Filler lèvres</a>
-          <a href="filler.php#filler-cernes">Filler cernes</a>
-          <a href="filler.php#filler-sillons">Filler sillons nasogéniens</a>
-          <a href="filler.php#filler-menton">Filler menton</a>
-          <a href="filler.php#filler-jawline">Filler jaw line</a>
-        </div>
-      </li>
-      <li class="has-dropdown">
-        <a href="lasers.php" class="dropdown-toggle">Lasers
-          <svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <div class="dropdown">
-          <a href="lasers.php#lasers-epilatoires">Lasers Épilatoires</a>
-          <a href="lasers.php#lasers-co2">Lasers CO2</a>
-        </div>
-      </li>
-      <li class="has-dropdown">
-        <a href="skincare.php" class="dropdown-toggle">Skincare
-          <svg class="caret" width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <div class="dropdown">
-          <a href="skincare.php#skincare-exosomes">Exosomes</a>
-          <a href="skincare.php#skincare-nctf">NCTF</a>
-          <a href="skincare.php#skincare-skinbooster">Skinbooster</a>
-          <a href="skincare.php#skincare-peelings">Peelings</a>
-          <a href="skincare.php#skincare-prp">PRP</a>
-          <a href="skincare.php#skincare-hydrafacial">Hydrafacial</a>
-          <a href="skincare.php#skincare-hifu">HIFU</a>
-          <a href="skincare.php#skincare-skinscrubber">Skin Scrubber</a>
-        </div>
-      </li>
+      <li><a href="filler.php">Filler</a></li>
+      <li><a href="lasers.php">Lasers</a></li>
+      <li><a href="skincare.php">Skincare</a></li>
       <li><a href="index.php#location">Nous trouver</a></li>
     </ul>
   </nav>
@@ -80,22 +47,10 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
     mainNav.classList.toggle('open');
   });
 
-  // Fermer le menu seulement pour les vrais liens de navigation
-  // (pas ceux qui servent juste à ouvrir/fermer un sous-menu, ex: "Skincare")
-  document.querySelectorAll('#mainNav a:not(.dropdown-toggle)').forEach(link => {
+  // Fermer le menu quand on clique sur un lien
+  document.querySelectorAll('#mainNav a').forEach(link => {
     link.addEventListener('click', () => {
       mainNav.classList.remove('open');
-    });
-  });
-
-  // Gestion des sous-menus (dropdowns) sur mobile — reste ouvert tant qu'on n'a pas
-  // cliqué ailleurs ou fermé le menu au X du hamburger
-  document.querySelectorAll('.dropdown-toggle').forEach(dropdownLink => {
-    dropdownLink.addEventListener('click', function(e) {
-      if (window.innerWidth <= 900) {
-        e.preventDefault();
-        this.parentElement.classList.toggle('open');
-      }
     });
   });
   // NOTE : le scroll du header et la révélation des sections (.reveal)

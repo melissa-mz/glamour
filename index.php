@@ -42,10 +42,7 @@ require __DIR__ . '/header.php';
   <div class="container about-wow-grid">
     <div class="about-visual reveal">
       <div class="about-photo-wow" style="background-image:url('<?php echo $img_docteur; ?>');background-size:cover;background-position:center;"></div>
-      <div class="about-badge-float">
-        <b>10+</b>
-        <span>Années d'expertise en médecine esthétique</span>
-      </div>
+      
     </div>
     <div class="about-content reveal">
       <span class="eyebrow">À propos</span>
