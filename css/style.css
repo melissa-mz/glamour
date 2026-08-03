@@ -1803,3 +1803,14 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
     margin-left: 20px;   /* un peu plus d'espace sur desktop */
   }
 }
+/* Forcer le fond blanc PUR du panneau mobile */
+#mainNav {
+  background: #FFFFFF !important;
+}
+
+/* Optionnel : si tu veux une ombre légère */
+@media (max-width: 900px) {
+  #mainNav {
+    box-shadow: -30px 0 60px rgba(0, 0, 0, 0.08);
+  }
+}

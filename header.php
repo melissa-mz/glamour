@@ -42,19 +42,35 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
 </header>
 
 <script>
-  // --- MENU HAMBURGER (uniquement le menu mobile ici) ---
+  // --- MENU HAMBURGER AVEC FERMETURE AMÉLIORÉE ---
   const hamburger = document.getElementById('hamburger');
   const mainNav = document.getElementById('mainNav');
 
-  hamburger.addEventListener('click', () => {
+  // Ouvrir / fermer avec le bouton hamburger
+  hamburger.addEventListener('click', function(e) {
+    e.stopPropagation(); // Empêche la fermeture intempestive
     mainNav.classList.toggle('open');
   });
 
-  // Fermer le menu quand on clique sur un lien
-  document.querySelectorAll('#mainNav a').forEach(link => {
-    link.addEventListener('click', () => {
+  // Fermer quand on clique sur un lien du menu
+  document.querySelectorAll('#mainNav a').forEach(function(link) {
+    link.addEventListener('click', function() {
       mainNav.classList.remove('open');
     });
   });
-  
+
+  // Fermer quand on clique à l'extérieur du menu (sur l'overlay)
+  mainNav.addEventListener('click', function(e) {
+    // Si le clic est sur le fond (et non sur le panneau lui-même)
+    if (e.target === mainNav) {
+      mainNav.classList.remove('open');
+    }
+  });
+
+  // Fermer avec la touche Échap
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+      mainNav.classList.remove('open');
+    }
+  });
 </script>
