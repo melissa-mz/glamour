@@ -819,14 +819,14 @@ section h2,
     justify-content: flex-start;
   }
   .hero h1 {
-    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-size: clamp(1.4rem, 3vw, 2rem);
   }
   .hero p.lead {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     max-width: 100%;
   }
   .hero-visual-ambiance {
-    max-width: 180px;
+    max-width: 150px;
     margin: 0;
     justify-self: end;
     order: 0;
@@ -834,18 +834,18 @@ section h2,
     aspect-ratio: 1/1;
   }
   .hero-ambiance-text {
-    font-size: 0.6rem;
-    gap: 4px;
+    font-size: 0.5rem;
+    gap: 3px;
   }
   .hero-ambiance-text span:first-child,
   .hero-ambiance-text span:last-child {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
   .hero-badge-luxury {
-    font-size: 0.45rem;
-    padding: 4px 10px;
-    bottom: 10px;
-    right: 6px;
+    font-size: 0.4rem;
+    padding: 3px 8px;
+    bottom: 8px;
+    right: 5px;
   }
   
   .about-grid,.location-grid{grid-template-columns:1fr;}
@@ -925,42 +925,49 @@ section h2,
     bottom: -12px;
   }
   
-  /* Hero : on passe en une colonne sur très petit écran */
+  /* Hero : on garde deux colonnes même sur très petit écran */
   .hero-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    text-align: left;
   }
   .hero-actions {
-    justify-content: center;
+    justify-content: flex-start;
   }
   .hero h1 {
-    font-size: clamp(1.8rem, 6vw, 2.4rem);
+    font-size: 1.1rem;
+    margin: 8px 0 10px;
   }
   .hero p.lead {
-    font-size: 0.95rem;
+    font-size: 0.7rem;
+    max-width: 100%;
+    margin-bottom: 8px;
+  }
+  .btn-primary {
+    padding: 8px 14px;
+    font-size: 0.55rem;
   }
   .hero-visual-ambiance {
-    max-width: 220px;
-    margin: 0 auto;
-    order: -1;
-    justify-self: center;
-    aspect-ratio: 1/1.08;
-    padding: 20px;
+    max-width: 100px;
+    margin: 0;
+    justify-self: end;
+    order: 0;
+    padding: 10px;
+    aspect-ratio: 1/1;
   }
   .hero-ambiance-text {
-    font-size: 0.8rem;
-    gap: 6px;
+    font-size: 0.35rem;
+    gap: 2px;
   }
   .hero-ambiance-text span:first-child,
   .hero-ambiance-text span:last-child {
-    font-size: 1.2rem;
+    font-size: 0.6rem;
   }
   .hero-badge-luxury {
-    font-size: 0.55rem;
-    padding: 6px 12px;
-    bottom: 12px;
-    right: 8px;
+    font-size: 0.3rem;
+    padding: 2px 5px;
+    bottom: 5px;
+    right: 3px;
   }
   
   .grands-carres-grid {
