@@ -46,20 +46,16 @@ require __DIR__ . '/header.php';
 <section class="about-editorial" id="about">
   <div class="container about-editorial-grid">
 
-    <!-- Partie gauche : Photo avec forme organique -->
+    <!-- Partie gauche : Photo simple -->
     <div class="about-image-area reveal">
-      <div class="about-image-blob">
+      <div class="about-image-simple">
         <img 
           src="<?php echo $img_docteur; ?>" 
           alt="Dr. Draoui Sadjia - Médecine esthétique" 
-          class="about-doctor-editorial"
+          class="about-doctor-simple"
           loading="lazy"
         >
       </div>
-      <!-- Petit cercle décoratif en fond -->
-      <div class="about-orb"></div>
-      <!-- Badge discret -->
-      
     </div>
 
     <!-- Partie droite : Texte -->
@@ -71,7 +67,6 @@ require __DIR__ . '/header.php';
         Fondatrice de Glamour Clinic, le Dr. Draoui Sadjia accompagne une clientèle exigeante à la recherche de résultats naturels, avec des protocoles médicaux précis et une écoute attentive de chaque projet esthétique.
       </p>
       
-      <!-- Citation mise en avant -->
       <blockquote class="about-quote">
         “ L’élégance d’un soin se mesure à la subtilité du résultat. ”
       </blockquote>
@@ -80,7 +75,7 @@ require __DIR__ . '/header.php';
         <span>Dr. S. Draoui</span>
       </div>
 
-      <!-- Trois piliers avec des icônes très fines -->
+      <!-- Trois piliers -->
       <div class="about-pillars">
         <div class="pillar">
           <span class="pillar-icon">✦</span>
@@ -99,7 +94,6 @@ require __DIR__ . '/header.php';
 
   </div>
 </section>
-
 <section class="services-showcase" id="soins">
   <div class="container">
     <div class="section-head reveal">
