@@ -20,21 +20,27 @@ img{max-width:100%;display:block;}
 a:focus-visible, button:focus-visible{outline:2px solid var(--or);outline-offset:3px;}
 @media (prefers-reduced-motion: reduce){ *{animation:none !important;transition:none !important;} }
 
-/* ---------- NAV ---------- */
-header{
-  position:relative;
-  z-index:100;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:26px 40px;
-  background:var(--blanc);
-  /* plus de border-bottom */
+header {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 40px;
+  background: var(--blanc);
 }
 .logo{font-family:'Work Sans',sans-serif;font-weight:800;font-size:1.3rem;color:var(--charbon);letter-spacing:0.02em;}
 .logo span{color:var(--bordeaux);}
-nav ul{list-style:none;display:flex;gap:30px;align-items:center;}
-nav a{color:var(--charbon);font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;position:relative;padding-bottom:4px;}
+.logo-link {
+  margin-right: auto;   
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  margin-right: 40px;   /* ← AJOUTE CETTE LIGNE */
+}nav a{color:var(--charbon);font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;position:relative;padding-bottom:4px;}
 nav a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--or);transition:width .35s ease;}
 nav a:hover::after{width:100%;}
 .nav-cta{background:var(--bordeaux);color:var(--blanc) !important;padding:11px 24px;border-radius:2px;font-size:0.78rem;letter-spacing:0.08em;font-weight:600;text-transform:uppercase;transition:background .3s ease;}
