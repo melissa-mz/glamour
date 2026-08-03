@@ -37,35 +37,62 @@ require __DIR__ . '/header.php';
     <span>Skincare Médical</span>
   </div>
 </div>
-<section class="about-modern" id="about">
-  <div class="container about-modern-grid">
-    <!-- Photo -->
-    <div class="about-photo-wrapper reveal">
-      <div class="about-photo-frame">
+<section class="about-editorial" id="about">
+  <div class="container about-editorial-grid">
+
+    <!-- Partie gauche : Photo avec forme organique -->
+    <div class="about-image-area reveal">
+      <div class="about-image-blob">
         <img 
           src="<?php echo $img_docteur; ?>" 
-          alt="Dr. Draoui Sadjia - Médecine esthétique Réghaïa" 
-          class="about-doctor-img"
+          alt="Dr. Draoui Sadjia - Médecine esthétique" 
+          class="about-doctor-editorial"
           loading="lazy"
         >
       </div>
+      <!-- Petit cercle décoratif en fond -->
+      <div class="about-orb"></div>
+      <!-- Badge discret -->
+      <div class="about-badge-editorial">
+        <span>✦</span> 12 ans d'expertise
+      </div>
     </div>
 
-    <!-- Texte -->
-    <div class="about-text-wrapper reveal">
-      <div class="about-meta">À propos</div>
+    <!-- Partie droite : Texte -->
+    <div class="about-text-editorial reveal">
+      <div class="about-eyebrow">À propos</div>
       <h2>Dr. Draoui Sadjia</h2>
-      <p class="about-desc">
+      <div class="about-underline"></div>
+      <p class="about-bio">
         Fondatrice de Glamour Clinic, le Dr. Draoui Sadjia accompagne une clientèle exigeante à la recherche de résultats naturels, avec des protocoles médicaux précis et une écoute attentive de chaque projet esthétique.
       </p>
-      <div class="about-signature">— Dr. S. Draoui</div>
+      
+      <!-- Citation mise en avant -->
+      <blockquote class="about-quote">
+        “ L’élégance d’un soin se mesure à la subtilité du résultat. ”
+      </blockquote>
 
-      <ul class="about-features">
-        <li><span>✦</span> Résultats naturels &amp; sur-mesure</li>
-        <li><span>✦</span> Suivi personnalisé et à l'écoute</li>
-        <li><span>✦</span> Technologies de dernière génération</li>
-      </ul>
+      <div class="about-signature-editorial">
+        <span>Dr. S. Draoui</span>
+      </div>
+
+      <!-- Trois piliers avec des icônes très fines -->
+      <div class="about-pillars">
+        <div class="pillar">
+          <span class="pillar-icon">✦</span>
+          <span class="pillar-text">Résultats naturels</span>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">✦</span>
+          <span class="pillar-text">Suivi personnalisé</span>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">✦</span>
+          <span class="pillar-text">Technologies de pointe</span>
+        </div>
+      </div>
     </div>
+
   </div>
 </section>
 

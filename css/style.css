@@ -884,108 +884,182 @@ body{animation:pageFadeIn .5s ease;}
   .cert-row{gap:30px;}
 }
 /* ============================================================
-   ABOUT MODERN — épuré, aéré, esthétique
+   ABOUT EDITORIAL — design luxe, photo organique
    ============================================================ */
-.about-modern {
+.about-editorial {
   background: var(--blanc);
-  padding: 100px 0 120px;
+  padding: 120px 0 140px;
   position: relative;
+  overflow: hidden;
 }
 
-.about-modern-grid {
+.about-editorial-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
 }
 
-/* Photo */
-.about-photo-wrapper {
+/* --- Partie image --- */
+.about-image-area {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.about-photo-frame {
+.about-image-blob {
   position: relative;
-  border-radius: 30px;
-  overflow: hidden;
-  box-shadow: 0 30px 60px rgba(33, 20, 23, 0.12);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  z-index: 2;
+  width: 100%;
+  max-width: 440px;
   aspect-ratio: 3/4;
-  background: #f4f0eb;
+  border-radius: 40% 60% 30% 70% / 50% 40% 60% 50%;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(33, 20, 23, 0.15);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  background: #f0ebe4;
 }
 
-.about-photo-frame:hover {
-  transform: scale(1.01);
-  box-shadow: 0 40px 80px rgba(33, 20, 23, 0.18);
+.about-image-blob:hover {
+  transform: scale(1.02) rotate(-0.5deg);
+  box-shadow: 0 60px 100px rgba(33, 20, 23, 0.22);
 }
 
-.about-doctor-img {
+.about-doctor-editorial {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.6s ease;
+  transition: transform 0.8s ease;
 }
 
-.about-photo-frame:hover .about-doctor-img {
-  transform: scale(1.04);
+.about-image-blob:hover .about-doctor-editorial {
+  transform: scale(1.08);
 }
 
-/* Texte */
-.about-text-wrapper {
+/* Cercle décoratif flou (derrière la photo) */
+.about-orb {
+  position: absolute;
+  z-index: 1;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(191, 149, 80, 0.15), transparent 70%);
+  top: -60px;
+  right: -40px;
+  filter: blur(40px);
+  pointer-events: none;
+  animation: orbFloat 8s ease-in-out infinite alternate;
+}
+
+@keyframes orbFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-20px, 30px) scale(1.2); }
+}
+
+/* Badge expérience */
+.about-badge-editorial {
+  position: absolute;
+  z-index: 3;
+  bottom: -10px;
+  left: -20px;
+  background: var(--blanc);
+  padding: 14px 24px;
+  border-radius: 60px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--charbon);
+  box-shadow: 0 12px 30px rgba(33, 20, 23, 0.08);
+  border: 1px solid rgba(191, 149, 80, 0.15);
+}
+
+.about-badge-editorial span {
+  color: var(--or);
+  margin-right: 6px;
+}
+
+/* --- Partie texte --- */
+.about-text-editorial {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 10px;
 }
 
-.about-meta {
+.about-eyebrow {
   font-size: 0.7rem;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.45em;
   text-transform: uppercase;
   color: var(--or);
   font-weight: 600;
+  margin-bottom: 4px;
 }
 
-.about-text-wrapper h2 {
-  font-size: clamp(2.2rem, 3.5vw, 3rem);
+.about-text-editorial h2 {
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
   font-weight: 400;
   margin: 0;
   line-height: 1.1;
-  background: linear-gradient(135deg, var(--charbon) 40%, var(--bordeaux) 100%);
+  background: linear-gradient(135deg, var(--charbon) 35%, var(--bordeaux) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   display: inline-block;
 }
 
-.about-desc {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #4a4a4a;
-  margin: 0;
-  max-width: 480px;
+.about-underline {
+  width: 50px;
+  height: 3px;
+  background: var(--or);
+  margin: 4px 0 12px 0;
+  border-radius: 10px;
 }
 
-.about-signature {
+.about-bio {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #4a4a4a;
+  margin: 0;
+  max-width: 520px;
+}
+
+.about-quote {
   font-family: 'Jost', sans-serif;
   font-size: 1.2rem;
   font-style: italic;
+  font-weight: 300;
   color: var(--bordeaux);
-  opacity: 0.8;
-  margin-top: -4px;
+  opacity: 0.75;
+  margin: 8px 0 4px 0;
+  padding-left: 18px;
+  border-left: 3px solid var(--or);
+  max-width: 400px;
+  line-height: 1.6;
 }
 
-/* Liste des avantages — minimaliste */
-.about-features {
-  list-style: none;
-  padding: 0;
-  margin: 6px 0 0 0;
+.about-signature-editorial {
+  margin-top: 4px;
+}
+
+.about-signature-editorial span {
+  font-family: 'Jost', sans-serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--charbon);
+  opacity: 0.7;
+  letter-spacing: 0.02em;
+}
+
+/* Trois piliers */
+.about-pillars {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+  margin-top: 12px;
 }
 
-.about-features li {
+.pillar {
   display: flex;
   align-items: center;
   gap: 14px;
@@ -994,67 +1068,109 @@ body{animation:pageFadeIn .5s ease;}
   color: var(--charbon);
 }
 
-.about-features li span {
+.pillar-icon {
   color: var(--or);
-  font-size: 1.2rem;
-  line-height: 1;
-  width: 24px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  width: 20px;
   text-align: center;
   flex-shrink: 0;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .about-modern-grid {
+.pillar-text {
+  border-bottom: 1px dashed rgba(0,0,0,0.05);
+  padding-bottom: 2px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1000px) {
+  .about-editorial-grid {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 60px;
   }
 
-  .about-photo-frame {
-    max-width: 380px;
+  .about-image-blob {
+    max-width: 340px;
     margin: 0 auto;
   }
 
-  .about-desc {
-    max-width: 100%;
+  .about-orb {
+    width: 200px;
+    height: 200px;
+    top: -20px;
+    right: 10px;
   }
 
-  .about-text-wrapper {
+  .about-badge-editorial {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -18px;
+  }
+
+  .about-text-editorial {
     text-align: center;
     align-items: center;
   }
 
-  .about-features li {
+  .about-bio {
+    max-width: 100%;
+  }
+
+  .about-quote {
+    max-width: 100%;
+    padding-left: 0;
+    border-left: none;
+    padding-top: 8px;
+    border-top: 2px solid var(--or);
+  }
+
+  .about-underline {
+    margin: 4px auto 12px auto;
+  }
+
+  .about-pillars {
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 16px 24px;
+  }
+
+  .pillar {
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
-  .about-modern {
-    padding: 70px 0;
+  .about-editorial {
+    padding: 70px 0 90px;
   }
 
-  .about-photo-frame {
-    max-width: 280px;
-    border-radius: 20px;
+  .about-image-blob {
+    max-width: 260px;
   }
 
-  .about-text-wrapper h2 {
-    font-size: 1.8rem;
+  .about-text-editorial h2 {
+    font-size: 1.9rem;
   }
 
-  .about-desc {
+  .about-bio {
     font-size: 0.95rem;
   }
 
-  .about-features li {
-    font-size: 0.85rem;
-    gap: 10px;
+  .about-quote {
+    font-size: 1rem;
+    padding-top: 6px;
   }
 
-  .about-features li span {
-    font-size: 1rem;
-    width: 20px;
+  .about-pillars {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .about-badge-editorial {
+    font-size: 0.7rem;
+    padding: 10px 18px;
+    bottom: -12px;
   }
 }
 /* ============================================================
