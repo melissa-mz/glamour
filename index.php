@@ -8,9 +8,7 @@ require __DIR__ . '/header.php';
   <div class="container hero-grid">
     <!-- Texte -->
     <div>
-      <div class="eyebrow hero-eyebrow">Médecine esthétique · anti-âge · laser — <?php echo $address_short; ?></div>
       <h1>Révélez votre <em>éclat naturel</em></h1>
-      <p class="lead">Des soins sur-mesure pour votre beauté et votre confiance, dans un cadre d'exception.</p>
       <div class="hero-actions">
         <a class="btn-primary" href="#soins">
           Découvrir les soins
