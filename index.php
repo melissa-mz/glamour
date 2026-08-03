@@ -19,19 +19,13 @@ require __DIR__ . '/header.php';
       </div>
     </div>
 
-    <!-- Côté visuel : plus de photo du docteur, juste une ambiance épurée -->
-    <div class="hero-visual-ambiance">
-      <div class="hero-ambiance-circle"></div>
-      <div class="hero-ambiance-text">
-        <span>✦</span>
-        <span>Expertise &amp; Élégance</span>
-        <span>✦</span>
-      </div>
-      <!-- Optionnel : un petit badge de confiance -->
-      <div class="hero-badge-luxury">
-        <span>+12 ans</span> d'expérience en esthétique médicale
-      </div>
-    </div>
+    <!-- Côté visuel : image d'ambiance dans la forme organique -->
+<div class="hero-visual-ambiance" style="background-image: url('<?php echo $img_hero_ambiance; ?>'); background-size: cover; background-position: center;">
+  <div class="hero-ambiance-overlay"></div>
+  <div class="hero-ambiance-circle"></div>
+  <div class="hero-ambiance-text">
+  </div>
+</div>
 
   </div>
 </section>
@@ -232,38 +226,29 @@ require __DIR__ . '/header.php';
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card reveal">
-        <span class="quote-mark">"</span>
         <div class="testimonial-stars">★★★★★</div>
         <p>Un accueil chaleureux et un résultat très naturel pour mon soin filler. Le Dr. Draoui prend vraiment le temps d'expliquer chaque étape.</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar"></div>
           <div>
-            <b>Amina B.</b>
-            <span>Soin Filler</span>
           </div>
         </div>
       </div>
       <div class="testimonial-card reveal">
-        <span class="quote-mark">"</span>
         <div class="testimonial-stars">★★★★★</div>
         <p>J'ai fait mon épilation laser ici depuis plusieurs mois, les résultats sont impressionnants et l'équipe est toujours très professionnelle.</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar"></div>
           <div>
-            <b>Yasmine K.</b>
-            <span>Épilation Laser</span>
           </div>
         </div>
       </div>
       <div class="testimonial-card reveal">
-        <span class="quote-mark">"</span>
         <div class="testimonial-stars">★★★★★</div>
         <p>Le programme future mariée était exactement ce qu'il me fallait avant mon mariage. Ma peau n'a jamais été aussi belle !</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar"></div>
           <div>
-            <b>Sarah M.</b>
-            <span>Programme Future Mariée</span>
           </div>
         </div>
       </div>

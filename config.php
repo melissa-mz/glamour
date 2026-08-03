@@ -15,6 +15,7 @@ $year              = date("Y");
 
 // Chemins des photos — dépose tes fichiers dans le dossier "images/"
 $img_docteur   = "images/docteur.jpg";
+$img_hero_ambiance = "images/hero.jpg";
 $img_botox     = "images/botox.jpg";
 $img_filler    = "images/filler.jpg";
 $img_lasers    = "images/lasers.jpg";
