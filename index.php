@@ -4,27 +4,28 @@ require_once __DIR__ . '/config.php';
 $page_title = "Glamour Clinic — Dr. Draoui Sadjia | Médecine Esthétique & Laser, Réghaïa";
 require __DIR__ . '/header.php';
 ?>
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow hero-eyebrow">Médecine esthétique · anti-âge · laser — <?php echo $address_short; ?></div>
-      <h1>Révélez votre éclat naturel.</h1>
-      <div class="hero-actions">
-        <a class="btn-primary" href="#soins">
-          Découvrir les soins
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
+<!-- ============================================================
+     HERO — effet escalier avec phrases percutantes
+     ============================================================ -->
+<section class="hero-glamour">
+  <div class="hero-glamour-inner">
+
+    <!-- Colonne gauche : texte en escalier -->
+    <div class="hero-glamour-stair">
+      <p class="stair-line1">Révélez votre</p>
+      <p class="stair-line2">beauté naturelle</p>
+      <p class="stair-line3">avec l'excellence médicale</p>
+      <span class="stair-divider"></span>
+      <a href="#soins" class="btn-hero-glamour">
+        Découvrir les soins
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
 
-
-    <!-- Côté visuel : image d'ambiance dans la forme organique -->
-<div class="hero-visual-ambiance" style="background-image: url('<?php echo $img_hero_ambiance; ?>'); background-size: cover; background-position: center;">
-  <div class="hero-ambiance-overlay"></div>
-  <div class="hero-ambiance-circle"></div>
-  <div class="hero-ambiance-text">
-  </div>
-</div>
+    <!-- Colonne droite : vidéo -->
+    <div class="hero-glamour-video-frame">
+      <video src="videos/vd.mp4" autoplay muted loop playsinline class="hero-glamour-video"></video>
+    </div>
 
   </div>
 </section>

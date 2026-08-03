@@ -21,10 +21,8 @@ $hero_bg = isset($hero_bg_images[$cat_key]) ? $hero_bg_images[$cat_key] : '';
       <div class="wow-circle-2"></div>
       <?php endif; ?>
       
-      <span class="wow-badge"><?php echo $cat['titre']; ?></span>
       
       <h1 class="wow-title">
-        <span class="wow-line">L'expertise</span>
         <span class="wow-highlight"><?php echo $cat['titre']; ?></span>
       </h1>
       
