@@ -9,7 +9,6 @@ require __DIR__ . '/header.php';
     <div>
       <div class="eyebrow hero-eyebrow">Médecine esthétique · anti-âge · laser — <?php echo $address_short; ?></div>
       <h1>Révélez votre éclat naturel.</h1>
-      <p class="lead">Avec le Dr. Draoui Sadjia, des soins sur-mesure pour votre beauté et votre confiance.</p>
       <div class="hero-actions">
         <a class="btn-primary" href="#soins">
           Découvrir les soins
