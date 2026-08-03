@@ -6,10 +6,10 @@ require __DIR__ . '/header.php';
 ?>
 <section class="hero">
   <div class="container hero-grid">
-    <!-- Texte -->
     <div>
-      <h1>Révélez l’<em>éclat</em> qui sommeille en vous</h1>
-      <p class="lead">Des soins sur mesure pour révéler votre beauté unique, dans un cadre d’exception.</p>
+      <div class="eyebrow hero-eyebrow">Médecine esthétique · anti-âge · laser — <?php echo $address_short; ?></div>
+      <h1>Révélez votre éclat naturel.</h1>
+      <p class="lead">Avec le Dr. Draoui Sadjia, des soins sur-mesure pour votre beauté et votre confiance.</p>
       <div class="hero-actions">
         <a class="btn-primary" href="#soins">
           Découvrir les soins
@@ -17,6 +17,7 @@ require __DIR__ . '/header.php';
         </a>
       </div>
     </div>
+
 
     <!-- Côté visuel : image d'ambiance dans la forme organique -->
 <div class="hero-visual-ambiance" style="background-image: url('<?php echo $img_hero_ambiance; ?>'); background-size: cover; background-position: center;">
@@ -58,9 +59,7 @@ require __DIR__ . '/header.php';
       <!-- Petit cercle décoratif en fond -->
       <div class="about-orb"></div>
       <!-- Badge discret -->
-      <div class="about-badge-editorial">
-        <span>✦</span> 12 ans d'expertise
-      </div>
+      
     </div>
 
     <!-- Partie droite : Texte -->
