@@ -37,10 +37,11 @@ require __DIR__ . '/header.php';
     <span>Skincare Médical</span>
   </div>
 </div>
-<section class="about-wow" id="about">
-  <div class="container about-wow-grid">
-    <div class="about-visual reveal">
-      <div class="about-photo-wow">
+<section class="about-modern" id="about">
+  <div class="container about-modern-grid">
+    <!-- Photo -->
+    <div class="about-photo-wrapper reveal">
+      <div class="about-photo-frame">
         <img 
           src="<?php echo $img_docteur; ?>" 
           alt="Dr. Draoui Sadjia - Médecine esthétique Réghaïa" 
@@ -49,32 +50,21 @@ require __DIR__ . '/header.php';
         >
       </div>
     </div>
-    <div class="about-content reveal">
-      <span class="eyebrow">À propos</span>
-      <h2>Dr. Draoui Sadjia</h2>
-      <p>Fondatrice de Glamour Clinic, le Dr. Draoui Sadjia accompagne une clientèle exigeante à la recherche de résultats naturels, avec des protocoles médicaux précis et une écoute attentive de chaque projet esthétique.</p>
-      <span class="signature">Dr. S. Draoui</span>
 
-      <div class="about-highlights">
-        <div class="about-highlight">
-          <span class="ico">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          <span>Résultats naturels &amp; sur-mesure</span>
-        </div>
-        <div class="about-highlight">
-          <span class="ico">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s-8-4.5-8-11a5 5 0 019-3 5 5 0 019 3c0 6.5-8 11-8 11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-          </span>
-          <span>Suivi personnalisé et à l'écoute</span>
-        </div>
-        <div class="about-highlight">
-          <span class="ico">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-          </span>
-          <span>Technologies de dernière génération</span>
-        </div>
-      </div>
+    <!-- Texte -->
+    <div class="about-text-wrapper reveal">
+      <div class="about-meta">À propos</div>
+      <h2>Dr. Draoui Sadjia</h2>
+      <p class="about-desc">
+        Fondatrice de Glamour Clinic, le Dr. Draoui Sadjia accompagne une clientèle exigeante à la recherche de résultats naturels, avec des protocoles médicaux précis et une écoute attentive de chaque projet esthétique.
+      </p>
+      <div class="about-signature">— Dr. S. Draoui</div>
+
+      <ul class="about-features">
+        <li><span>✦</span> Résultats naturels &amp; sur-mesure</li>
+        <li><span>✦</span> Suivi personnalisé et à l'écoute</li>
+        <li><span>✦</span> Technologies de dernière génération</li>
+      </ul>
     </div>
   </div>
 </section>

@@ -883,49 +883,180 @@ body{animation:pageFadeIn .5s ease;}
   .testimonials-grid{grid-template-columns:1fr;}
   .cert-row{gap:30px;}
 }
-
 /* ============================================================
-   ABOUT WOW — nouvelle mise en scène du Dr. Draoui
+   ABOUT MODERN — épuré, aéré, esthétique
    ============================================================ */
-.about-wow{background:var(--blanc);}
-.about-wow-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:90px;align-items:center;}
-
-.about-visual{position:relative;padding:0 30px 40px 0;}
-.about-visual::before{
-  content:'';position:absolute;top:26px;left:26px;right:0;bottom:0;
-  border:1.5px solid var(--or);border-radius:26px;z-index:0;
+.about-modern {
+  background: var(--blanc);
+  padding: 100px 0 120px;
+  position: relative;
 }
-.about-photo-wow{
-  position:relative;z-index:1;aspect-ratio:3/4;border-radius:26px;overflow:hidden;
-  background:linear-gradient(155deg,#F2F2EF,#E6E6E3);
-  box-shadow:0 50px 90px -30px rgba(33,20,23,0.3);
-  transition:transform .6s ease;
+
+.about-modern-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
 }
-.about-visual:hover .about-photo-wow{transform:translateY(-6px);}
 
-.about-badge-float{
-  position:absolute;z-index:2;bottom:-6px;right:-14px;
-  background:var(--bordeaux);color:var(--blanc);
-  padding:26px 30px;border-radius:20px;max-width:190px;
-  box-shadow:0 30px 60px -20px rgba(33,20,23,0.4);
+/* Photo */
+.about-photo-wrapper {
+  position: relative;
 }
-.about-badge-float b{display:block;font-family:'Jost',sans-serif;font-weight:500;font-size:2rem;color:var(--or);line-height:1;margin-bottom:6px;}
-.about-badge-float span{display:block;font-size:0.78rem;line-height:1.5;color:rgba(255,255,255,0.85);}
 
-.about-content .eyebrow{display:block;margin-bottom:6px;}
-.about-content h2{font-size:clamp(1.9rem,3.2vw,2.6rem);margin-bottom:22px;color:var(--charbon);}
-.about-content p{font-size:1.05rem;line-height:1.9;color:#3F4542;margin-bottom:20px;max-width:520px;}
-.about-content .signature{font-family:'Work Sans',sans-serif;font-style:italic;font-weight:600;font-size:1.4rem;color:var(--bordeaux);margin:14px 0 36px;display:block;}
-
-.about-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:560px;}
-.about-highlight{display:flex;flex-direction:column;gap:14px;}
-.about-highlight .ico{
-  width:44px;height:44px;border-radius:50%;
-  background:rgba(92,26,46,0.06);color:var(--bordeaux);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+.about-photo-frame {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(33, 20, 23, 0.12);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  aspect-ratio: 3/4;
+  background: #f4f0eb;
 }
-.about-highlight span{font-size:0.84rem;color:var(--charbon);font-weight:500;line-height:1.4;}
 
+.about-photo-frame:hover {
+  transform: scale(1.01);
+  box-shadow: 0 40px 80px rgba(33, 20, 23, 0.18);
+}
+
+.about-doctor-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.about-photo-frame:hover .about-doctor-img {
+  transform: scale(1.04);
+}
+
+/* Texte */
+.about-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.about-meta {
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--or);
+  font-weight: 600;
+}
+
+.about-text-wrapper h2 {
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.1;
+  background: linear-gradient(135deg, var(--charbon) 40%, var(--bordeaux) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.about-desc {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin: 0;
+  max-width: 480px;
+}
+
+.about-signature {
+  font-family: 'Jost', sans-serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--bordeaux);
+  opacity: 0.8;
+  margin-top: -4px;
+}
+
+/* Liste des avantages — minimaliste */
+.about-features {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about-features li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--charbon);
+}
+
+.about-features li span {
+  color: var(--or);
+  font-size: 1.2rem;
+  line-height: 1;
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-modern-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .about-photo-frame {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .about-desc {
+    max-width: 100%;
+  }
+
+  .about-text-wrapper {
+    text-align: center;
+    align-items: center;
+  }
+
+  .about-features li {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-modern {
+    padding: 70px 0;
+  }
+
+  .about-photo-frame {
+    max-width: 280px;
+    border-radius: 20px;
+  }
+
+  .about-text-wrapper h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-desc {
+    font-size: 0.95rem;
+  }
+
+  .about-features li {
+    font-size: 0.85rem;
+    gap: 10px;
+  }
+
+  .about-features li span {
+    font-size: 1rem;
+    width: 20px;
+  }
+}
 /* ============================================================
    POURQUOI NOUS CHOISIR
    ============================================================ */
