@@ -4,13 +4,13 @@ require_once __DIR__ . '/config.php';
 $page_title = "Glamour Clinic — Dr. Draoui Sadjia | Médecine Esthétique & Laser, Réghaïa";
 require __DIR__ . '/header.php';
 ?>
-
 <section class="hero">
   <div class="container hero-grid">
+    <!-- Texte -->
     <div>
       <div class="eyebrow hero-eyebrow">Médecine esthétique · anti-âge · laser — <?php echo $address_short; ?></div>
-      <h1>Révélez votre éclat naturel.</h1>
-      <p class="lead">Avec le Dr. Draoui Sadjia, des soins sur-mesure pour votre beauté et votre confiance.</p>
+      <h1>Révélez votre <em>éclat naturel</em></h1>
+      <p class="lead">Des soins sur-mesure pour votre beauté et votre confiance, dans un cadre d'exception.</p>
       <div class="hero-actions">
         <a class="btn-primary" href="#soins">
           Découvrir les soins
@@ -18,9 +18,21 @@ require __DIR__ . '/header.php';
         </a>
       </div>
     </div>
-    <div class="hero-photo-wrap">
-      <div class="photo-frame" style="background-image:url('<?php echo $img_docteur; ?>');background-size:cover;background-position:center;"></div>
+
+    <!-- Côté visuel : plus de photo du docteur, juste une ambiance épurée -->
+    <div class="hero-visual-ambiance">
+      <div class="hero-ambiance-circle"></div>
+      <div class="hero-ambiance-text">
+        <span>✦</span>
+        <span>Expertise &amp; Élégance</span>
+        <span>✦</span>
+      </div>
+      <!-- Optionnel : un petit badge de confiance -->
+      <div class="hero-badge-luxury">
+        <span>+12 ans</span> d'expérience en esthétique médicale
+      </div>
     </div>
+
   </div>
 </section>
 
