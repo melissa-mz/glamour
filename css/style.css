@@ -1,12 +1,12 @@
 :root{
-  --blanc:#FFFFFF;        /* Fond principal : BLANC PUR */
-  --blanc-casse:#F9F7F4;  /* Blanc cassé très subtil pour la section témoignages */
-  --charbon:#211C17;      /* Texte : charbon chaud (plus doux qu'un noir pur, plus premium avec le beige) */
+  --blanc:#FFFFFF;
+  --blanc-casse:#F9F7F4;
+  --charbon:#211C17;
   --gris:#4A4A4A;
   --gris-clair:#E8DBCF;
-  --bordeaux:#5C1A2E;     /* Pour les boutons */
-  --or:#BF9550;           /* Pour les boutons */
-  --beige:#F2EBE0;        /* Beige UNIQUEMENT pour Footer et Category Hero */
+  --bordeaux:#5C1A2E;
+  --or:#BF9550;
+  --beige:#F2EBE0;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -44,7 +44,7 @@ nav a:hover::after{width:100%;}
 .dropdown a:hover{background:rgba(92,26,46,0.06);color:var(--bordeaux);}
 
 /* ============================================================
-   HERO AMBIANCE — design luxe, sans photo du docteur
+   HERO — toujours deux colonnes
    ============================================================ */
 .hero{min-height:100vh;background:var(--blanc);display:flex;align-items:center;padding-top:120px;position:relative;overflow:hidden;}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;width:100%;}
@@ -179,20 +179,18 @@ section{padding:130px 0;}
                 transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Si JavaScript est activé, on cache les éléments au départ */
 .js .reveal {
     opacity: 0;
     transform: translateY(28px);
 }
 
-/* Quand l'élément entre dans le viewport, on l'affiche avec l'animation */
 .js .reveal.in {
     opacity: 1;
     transform: translateY(0);
 }
 
 /* ============================================================
-   ABOUT EDITORIAL — design luxe, photo organique
+   ABOUT EDITORIAL
    ============================================================ */
 .about-editorial {
   background: var(--blanc);
@@ -208,7 +206,6 @@ section{padding:130px 0;}
   align-items: center;
 }
 
-/* --- Partie image --- */
 .about-image-area {
   position: relative;
   display: flex;
@@ -246,7 +243,6 @@ section{padding:130px 0;}
   transform: scale(1.08);
 }
 
-/* Cercle décoratif flou (derrière la photo) */
 .about-orb {
   position: absolute;
   z-index: 1;
@@ -266,7 +262,6 @@ section{padding:130px 0;}
   100% { transform: translate(-20px, 30px) scale(1.2); }
 }
 
-/* Badge expérience */
 .about-badge-editorial {
   position: absolute;
   z-index: 3;
@@ -288,7 +283,6 @@ section{padding:130px 0;}
   margin-right: 6px;
 }
 
-/* --- Partie texte --- */
 .about-text-editorial {
   display: flex;
   flex-direction: column;
@@ -359,7 +353,6 @@ section{padding:130px 0;}
   letter-spacing: 0.02em;
 }
 
-/* Trois piliers */
 .about-pillars {
   display: flex;
   flex-direction: column;
@@ -390,7 +383,7 @@ section{padding:130px 0;}
   padding-bottom: 2px;
 }
 
-/* ---------- SERVICES (index summary) ---------- */
+/* ---------- SERVICES ---------- */
 .services{background:var(--blanc);}
 .service-row{display:grid;grid-template-columns:0.85fr 1.15fr;gap:70px;align-items:center;padding:64px 0;border-bottom:1px solid var(--gris-clair);scroll-margin-top:110px;}
 .service-row:first-child{padding-top:0;}
@@ -428,7 +421,7 @@ section{padding:130px 0;}
 .btn-insta-solid{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 26px;border-radius:2px;font-size:0.85rem;letter-spacing:0.08em;font-weight:600;text-transform:uppercase;color:var(--blanc);background:linear-gradient(135deg,#4f5bd5,#962fbf,#d62976,#fa7e1e,#feda75);transition:transform .3s ease, filter .3s ease;}
 .btn-insta-solid:hover{transform:translateY(-2px);filter:brightness(1.06);}
 
-/* ---------- FOOTER (BEIGE) + ICÔNES RESEAUX ---------- */
+/* ---------- FOOTER ---------- */
 footer{background:var(--blanc-casse);color:var(--charbon);padding:70px 0 30px;border-top:1px solid rgba(0,0,0,0.04);}
 .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
 footer h4{font-family:'Work Sans',sans-serif;font-weight:700;color:var(--charbon);font-size:1.05rem;margin-bottom:20px;}
@@ -449,7 +442,7 @@ footer ul li a:hover{color:var(--bordeaux);}
 .wa-float svg{width:29px;height:29px;fill:#fff;}
 
 /* ============================================================
-   SERVICES GRANDS CARRES - IMPOSANTS, SANS BORDURE, PREMIUM
+   SERVICES GRANDS CARRES
    ============================================================ */
 .services-showcase {
   background: var(--blanc);
@@ -622,7 +615,7 @@ footer ul li a:hover{color:var(--bordeaux);}
 }
 
 /* ============================================================
-   TÉMOIGNAGES — FOND BLANC CASSÉ + CADRES BIEN DÉFINIS
+   TÉMOIGNAGES
    ============================================================ */
 .testimonials {
   background: var(--blanc-casse);
@@ -707,7 +700,7 @@ footer ul li a:hover{color:var(--bordeaux);}
 }
 
 /* ============================================================
-   DÉGRADÉ NOIR → BORDEAUX SUR TOUS LES TITRES DE SECTIONS
+   DÉGRADÉ NOIR → BORDEAUX SUR LES TITRES
    ============================================================ */
 section h2,
 .grand-carre-content h3,
@@ -809,43 +802,43 @@ section h2,
 @media (max-width: 900px) {
   nav ul{display:none;}
   
-  /* Hero : on garde deux colonnes sur mobile */
+  /* Hero : DEUX COLONNES même sur mobile */
   .hero-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 15px;
     text-align: left;
   }
   .hero-actions {
     justify-content: flex-start;
   }
   .hero h1 {
-    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
   }
   .hero p.lead {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     max-width: 100%;
   }
   .hero-visual-ambiance {
-    max-width: 150px;
+    max-width: 120px;
     margin: 0;
     justify-self: end;
-    order: 0;
-    padding: 16px;
+    order: 0 !important;
+    padding: 12px;
     aspect-ratio: 1/1;
   }
   .hero-ambiance-text {
-    font-size: 0.5rem;
-    gap: 3px;
+    font-size: 0.4rem;
+    gap: 2px;
   }
   .hero-ambiance-text span:first-child,
   .hero-ambiance-text span:last-child {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
   .hero-badge-luxury {
-    font-size: 0.4rem;
-    padding: 3px 8px;
-    bottom: 8px;
-    right: 5px;
+    font-size: 0.35rem;
+    padding: 2px 6px;
+    bottom: 6px;
+    right: 4px;
   }
   
   .about-grid,.location-grid{grid-template-columns:1fr;}
@@ -925,48 +918,48 @@ section h2,
     bottom: -12px;
   }
   
-  /* Hero : on garde deux colonnes même sur très petit écran */
+  /* Hero : toujours DEUX COLONNES sur très petit écran */
   .hero-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px;
     text-align: left;
   }
   .hero-actions {
     justify-content: flex-start;
   }
   .hero h1 {
-    font-size: 1.1rem;
-    margin: 8px 0 10px;
+    font-size: 0.9rem;
+    margin: 4px 0 6px;
   }
   .hero p.lead {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     max-width: 100%;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
   }
   .btn-primary {
-    padding: 8px 14px;
-    font-size: 0.55rem;
+    padding: 5px 10px;
+    font-size: 0.5rem;
   }
   .hero-visual-ambiance {
-    max-width: 100px;
+    max-width: 80px;
     margin: 0;
     justify-self: end;
-    order: 0;
-    padding: 10px;
+    order: 0 !important;
+    padding: 8px;
     aspect-ratio: 1/1;
   }
   .hero-ambiance-text {
-    font-size: 0.35rem;
-    gap: 2px;
+    font-size: 0.3rem;
+    gap: 1px;
   }
   .hero-ambiance-text span:first-child,
   .hero-ambiance-text span:last-child {
-    font-size: 0.6rem;
+    font-size: 0.5rem;
   }
   .hero-badge-luxury {
-    font-size: 0.3rem;
-    padding: 2px 5px;
-    bottom: 5px;
+    font-size: 0.25rem;
+    padding: 1px 4px;
+    bottom: 4px;
     right: 3px;
   }
   
@@ -993,7 +986,7 @@ section h2,
 }
 
 /* ============================================================
-   MENU MOBILE — hamburger + panneau glissant
+   MENU MOBILE
    ============================================================ */
 .hamburger{
   display:none;
@@ -1052,13 +1045,13 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
   .has-dropdown .dropdown a{padding:12px 0;font-size:0.88rem;color:var(--gris);}
 }
 
-/* --- Scrollbar personnalisée --- */
+/* --- Scrollbar --- */
 ::-webkit-scrollbar{width:10px;}
 ::-webkit-scrollbar-track{background:var(--beige);}
 ::-webkit-scrollbar-thumb{background:var(--bordeaux);border-radius:10px;border:2px solid var(--beige);}
 ::-webkit-scrollbar-thumb:hover{background:var(--or);}
 html{scrollbar-width:thin;scrollbar-color:var(--bordeaux) var(--beige);}
 
-/* --- Fondu d'entrée global de page --- */
+/* --- Fondu d'entrée global --- */
 body{animation:pageFadeIn .5s ease;}
 @keyframes pageFadeIn{from{opacity:0;}to{opacity:1;}}
