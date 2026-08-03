@@ -38,30 +38,24 @@
           <li><?php echo $phone_3; ?></li>
         </ul>
 
-        <!-- =============================== -->
-        <!-- VRAIES ICÔNES RÉSEAUX SOCIAUX   -->
+        <!-- VRAIES ICÔNES RÉSEAUX SOCIAUX -->
         <div class="footer-socials" style="margin-top:20px;">
-    <div class="social-links">
-
-        <a href="<?php echo $instagram_url; ?>"
-           target="_blank"
-           rel="noopener"
-           aria-label="Instagram"
-           class="social instagram">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-
-        <a href="<?php echo wa_link($whatsapp_number, $msg_default); ?>"
-           target="_blank"
-           rel="noopener"
-           aria-label="WhatsApp"
-           class="social whatsapp">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-
-    </div>
-</div>
-
+          <div class="social-links">
+            <a href="<?php echo $instagram_url; ?>"
+               target="_blank"
+               rel="noopener"
+               aria-label="Instagram"
+               class="social instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="<?php echo wa_link($whatsapp_number, $msg_default); ?>"
+               target="_blank"
+               rel="noopener"
+               aria-label="WhatsApp"
+               class="social whatsapp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -80,20 +74,58 @@
    target="_blank"
    rel="noopener"
    aria-label="Contacter sur WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
+  <i class="fa-brands fa-whatsapp"></i>
 </a>
 
+<!-- ============================================================
+     SCRIPT — FIX DÉFINITIF POUR LE RÉVÉLATEUR (.reveal)
+     ============================================================ -->
 <script>
-  // Seul et unique endroit où ces scripts sont déclarés sur toute la page.
-  const header = document.getElementById('mainHeader');
-  if (header) {
-    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 30));
-  }
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {threshold:0.15});
-  revealEls.forEach(el => io.observe(el));
+  // 1. FORCER la classe .js sur <html> pour activer le mode animé
+  document.documentElement.classList.add('js');
+
+  // 2. Une fois le DOM chargé, on initialise l'observateur
+  document.addEventListener('DOMContentLoaded', function() {
+
+    // Sécurité : on remet .js au cas où
+    document.documentElement.classList.add('js');
+
+    // --- Gestion du header scroll (conservé) ---
+    const header = document.getElementById('mainHeader');
+    if (header) {
+      window.addEventListener('scroll', function() {
+        header.classList.toggle('scrolled', window.scrollY > 30);
+      });
+    }
+
+    // --- Révélateur (reveal) ---
+    const revealElements = document.querySelectorAll('.reveal');
+
+    if ('IntersectionObserver' in window && revealElements.length > 0) {
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            // On peut arrêter d'observer après l'apparition pour économiser
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -20px 0px'
+      });
+
+      revealElements.forEach(function(el) {
+        observer.observe(el);
+      });
+    } else {
+      // FALLBACK : si IntersectionObserver n'est PAS supporté
+      // on affiche TOUT tout de suite
+      revealElements.forEach(function(el) {
+        el.classList.add('in');
+      });
+    }
+  });
 </script>
 
 </body>

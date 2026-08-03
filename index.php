@@ -37,12 +37,17 @@ require __DIR__ . '/header.php';
     <span>Skincare Médical</span>
   </div>
 </div>
-
 <section class="about-wow" id="about">
   <div class="container about-wow-grid">
     <div class="about-visual reveal">
-      <div class="about-photo-wow" style="background-image:url('<?php echo $img_docteur; ?>');background-size:cover;background-position:center;"></div>
-      
+      <div class="about-photo-wow">
+        <img 
+          src="<?php echo $img_docteur; ?>" 
+          alt="Dr. Draoui Sadjia - Médecine esthétique Réghaïa" 
+          class="about-doctor-img"
+          loading="lazy"
+        >
+      </div>
     </div>
     <div class="about-content reveal">
       <span class="eyebrow">À propos</span>
