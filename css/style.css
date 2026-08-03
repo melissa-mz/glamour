@@ -1445,3 +1445,51 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
   .has-dropdown.open .dropdown{display:flex;flex-direction:column;}
   .has-dropdown .dropdown a{padding:12px 0;font-size:0.88rem;color:var(--gris);}
 }
+/* --- LOGO EN IMAGE --- */
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border: none;      /* aucune bordure autour du lien */
+  outline: none;     /* pas de contour au focus */
+}
+
+.logo-img {
+  height: 70px;        /* plus grand que 50px */
+  width: auto;
+  max-height: 80px;
+  display: block;
+  border: none;        /* pas de bordure sur l'image */
+  background: transparent; /* si jamais un fond blanc apparaît */
+}
+
+/* Sur tablette */
+@media (max-width: 768px) {
+  .logo-img {
+    height: 60px;
+  }
+}
+
+/* Sur mobile */
+@media (max-width: 480px) {
+  .logo-img {
+    height: 50px;
+  }
+}
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  margin-left: 15px; /* ← décale le logo de 15px par rapport au bord */
+}
+
+.logo-img {
+  height: 70px;
+  width: auto;
+  max-height: 80px;
+  display: block;
+  border: none;
+  background: transparent;
+}

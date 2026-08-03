@@ -17,7 +17,10 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
 <body>
 
 <header id="mainHeader">
-  <div class="logo">GLAMOUR <span>CLINIC</span></div>
+  <!-- LOGO EN IMAGE -->
+  <a href="index.php" class="logo-link">
+    <img src="images/logo.jpg" alt="Glamour Clinic" class="logo-img">
+  </a>
 
   <!-- BOUTON HAMBURGER -->
   <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -53,7 +56,5 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
       mainNav.classList.remove('open');
     });
   });
-  // NOTE : le scroll du header et la révélation des sections (.reveal)
-  // sont gérés une seule fois, dans footer.php (à la fin de la page).
-  // Ne pas les redéclarer ici pour éviter un conflit de variables JS.
+  
 </script>
