@@ -27,7 +27,7 @@ $hero_bg_images = [
   'filler'   => 'images/hero-filler.jpg',
   'lasers'   => 'images/hero-lasers.png',
   'skincare' => 'images/hero-skincare.png',
-  'botox'    => 'images/hero-botox.png',
+  'botox'    => 'images/hero-botox.jpg',
 ];
 
 function wa_link($number, $message) {

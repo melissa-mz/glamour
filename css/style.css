@@ -1,5 +1,5 @@
 :root{
-  --blanc:#FFFFFF;        /* Fond principal : BLANC PUR */
+  --blanc:rgba(255, 255, 255, 0.95);        /* Fond principal : BLANC PUR */
   --blanc-casse:#F9F7F4;  /* Blanc cassé très subtil pour la section témoignages */
   --charbon:#211C17;      /* Texte : charbon chaud (plus doux qu'un noir pur, plus premium avec le beige) */
   --gris:#4A4A4A;
@@ -10,7 +10,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{background:var(--blanc);color:var(--charbon);font-family:'Work Sans',sans-serif;font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+body{background:var(--blanc-casse);color:var(--charbon);font-family:'Work Sans',sans-serif;font-weight:300;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 h1,h2,h3,h4,.display{font-family:'Jost',sans-serif;font-weight:400;letter-spacing:0;}
 .eyebrow{font-family:'Work Sans',sans-serif;font-size:0.72rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--or);font-weight:600;}
 a{color:inherit;text-decoration:none;}
@@ -1831,17 +1831,7 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
   padding: 40px 6% 60px;
   background: var(--blanc);
 }
-.hero-glamour-video {
-  width: 100%;
-  height: 460px;
-  object-fit: cover;
-  border-radius: 200px;
-  border: 8px solid var(--blanc);
-  outline: 3px solid var(--bordeaux);     /* ← AJOUTE CETTE LIGNE */
-  outline-offset: 6px;                    /* ← AJOUTE CETTE LIGNE */
-  box-shadow: 0 20px 50px rgba(33, 20, 23, 0.1);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
+
 
 .hero-glamour-inner {
   display: flex;
@@ -2062,8 +2052,8 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
 
 .cat-hero-wow .wow-badge {
   color: #FFFFFF !important;
-  background: rgba(255, 255, 255, 0.12) !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  background: #FFFFFF  !important;
+  border: 1px solid  #FFFFFF  !important;
 }
 
 .cat-hero-wow .btn-wow-primary {
@@ -2074,4 +2064,127 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
 .cat-hero-wow .btn-wow-primary:hover {
   background: var(--or) !important;
   color: #FFFFFF !important;
+}
+/* ============================================================
+   CAT-SPLIT-HERO — nouveau hero éditorial pour Botox/Filler/
+   Lasers/Skincare. Remplace .cat-hero-wow (laissé en place,
+   inutilisé, pas besoin de le supprimer).
+   ============================================================ */
+.cat-split-hero{background:var(--blanc-casse);padding:150px 0 100px;overflow:hidden;}
+.csh-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+
+.csh-text{position:relative;z-index:1;}
+.csh-breadcrumb{font-size:0.74rem;letter-spacing:0.03em;color:var(--gris);margin-bottom:30px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.csh-breadcrumb a{color:var(--gris);transition:color .25s ease;}
+.csh-breadcrumb a:hover{color:var(--bordeaux);}
+.csh-breadcrumb b{color:var(--bordeaux);font-weight:600;}
+.csh-breadcrumb span{color:var(--gris-clair);}
+
+.csh-number{
+  position:absolute;top:-46px;right:0;z-index:0;
+  font-family:'Jost',sans-serif;font-weight:600;font-size:9rem;line-height:1;
+  color:transparent;-webkit-text-stroke:1.5px rgba(92,26,46,0.12);
+  pointer-events:none;user-select:none;
+}
+.csh-eyebrow{font-size:0.72rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--or);font-weight:600;margin-bottom:16px;position:relative;}
+.csh-title{
+  font-family:'Jost',sans-serif;font-weight:400;
+  font-size:clamp(2.5rem,4.4vw,3.8rem);line-height:1.1;
+  color:var(--charbon) !important;-webkit-text-fill-color:var(--charbon) !important;background:none !important;
+  margin-bottom:24px;max-width:480px;position:relative;
+}
+.csh-intro{font-size:1.05rem;line-height:1.85;color:var(--gris);max-width:440px;margin-bottom:40px;font-weight:300;position:relative;}
+.csh-actions{display:flex;align-items:center;gap:36px;flex-wrap:wrap;}
+.csh-count{display:flex;flex-direction:column;border-left:2px solid var(--or);padding-left:16px;}
+.csh-count b{font-family:'Jost',sans-serif;font-weight:500;font-size:1.8rem;color:var(--bordeaux);line-height:1;}
+.csh-count span{font-size:0.7rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--gris);font-weight:600;line-height:1.4;margin-top:4px;}
+
+.csh-visual{position:relative;aspect-ratio:4/4.6;max-width:460px;margin:0 auto;}
+.csh-frame-line{
+  position:absolute;inset:-22px -22px 22px 22px;
+  border:1.5px solid var(--or);border-radius:12% 50% 50% 50%;
+  transform:rotate(-4deg);z-index:0;
+}
+.csh-photo{
+  position:relative;z-index:1;width:100%;height:100%;
+  border-radius:12% 50% 50% 50%;overflow:hidden;object-fit:cover;object-position:center 22%;
+  box-shadow:0 45px 90px -24px rgba(33,20,23,0.32);display:block;
+}
+.csh-photo-placeholder{
+  background:linear-gradient(155deg, var(--gris-clair) 0%, #EFE6DC 100%);
+  display:flex;align-items:center;justify-content:center;
+}
+.csh-plate{
+  position:absolute;z-index:2;bottom:-18px;left:-24px;
+  background:var(--charbon);color:var(--blanc);
+  padding:20px 24px;border-radius:16px;max-width:200px;
+  box-shadow:0 26px 55px -18px rgba(33,20,23,0.42);
+}
+.csh-plate .plate-num{
+  display:block;font-family:'Jost',sans-serif;font-style:italic;font-weight:400;
+  font-size:0.72rem;color:var(--or);margin-bottom:6px;letter-spacing:0.04em;
+}
+.csh-plate b{display:block;font-family:'Jost',sans-serif;font-weight:500;font-size:0.98rem;line-height:1.4;color:var(--blanc);}
+
+@media (max-width:900px){
+  .cat-split-hero{padding:120px 0 70px;}
+  .csh-grid{grid-template-columns:1fr;gap:56px;}
+  .csh-number{font-size:5.5rem;top:-30px;}
+  .csh-visual{max-width:320px;}
+  .csh-plate{left:0;bottom:-14px;padding:14px 18px;max-width:170px;}
+  .csh-actions{gap:24px;}
+}
+/* ============================================================
+   CAT-SPLIT-HERO — V2, à coller EN PLUS de la V1 déjà ajoutée
+   (celle avec .csh-grid, .csh-title, .csh-photo, etc.)
+   Ces règles complètent/affinent la V1, ne la remplacent pas.
+   ============================================================ */
+
+.csh-eyebrow-row{display:flex;align-items:center;gap:10px;margin-bottom:16px;position:relative;}
+.csh-icon{
+  display:flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;
+  background:rgba(92,26,46,0.07);color:var(--bordeaux);flex-shrink:0;
+}
+.csh-eyebrow{margin-bottom:0;}
+
+.csh-title{margin-bottom:14px;}
+
+.csh-tagline{
+  font-family:'Jost',sans-serif;font-style:italic;font-weight:500;
+  font-size:clamp(1.15rem,1.7vw,1.4rem);line-height:1.5;
+  margin-bottom:22px;max-width:440px;position:relative;
+  background:linear-gradient(100deg, var(--bordeaux) 15%, var(--or) 60%, var(--bordeaux) 90%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  display:inline-block;
+}
+
+.csh-intro{font-size:0.96rem;color:var(--gris);opacity:0.9;}
+
+/* Anneau pointillé qui tourne lentement autour de la photo */
+.csh-orbit{
+  position:absolute;inset:-40px;z-index:0;
+  border:1.5px dashed rgba(92,26,46,0.18);
+  border-radius:50%;
+  animation:cshSpin 50s linear infinite;
+  pointer-events:none;
+}
+.csh-orbit::before{
+  content:'';position:absolute;top:-4px;left:50%;
+  width:8px;height:8px;border-radius:50%;
+  background:var(--or);transform:translateX(-50%);
+}
+@keyframes cshSpin{to{transform:rotate(360deg);}}
+
+.csh-frame-line{
+  animation:cshSpinSlow 70s linear infinite;
+}
+@keyframes cshSpinSlow{
+  from{transform:rotate(-4deg);}
+  to{transform:rotate(356deg);}
+}
+
+@media (max-width:900px){
+  .csh-orbit{inset:-24px;}
+  .csh-tagline{max-width:100%;}
 }

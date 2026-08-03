@@ -6,33 +6,69 @@ $total_soins = count($cat['soins']);
 
 // --- RÉCUPÉRATION DE L'IMAGE DE FOND DEPUIS CONFIG.PHP ---
 $hero_bg = isset($hero_bg_images[$cat_key]) ? $hero_bg_images[$cat_key] : '';
+
+
+// --- PHRASE D'ACCROCHE PROPRE À CHAQUE UNIVERS ---
+$cat_taglines = [
+  'botox'    => "Le geste juste, pour un regard qui reste le vôtre.",
+  'filler'   => "L'art du détail, au service de votre harmonie.",
+  'lasers'   => "La précision de la lumière, la douceur du résultat.",
+  'skincare' => "Une peau qui respire, un éclat qui dure.",
+];
+$cat_tagline = isset($cat_taglines[$cat_key]) ? $cat_taglines[$cat_key] : '';
+
+// --- FORME DE PHOTO PROPRE À CHAQUE UNIVERS (le coin coupé change de côté) ---
+$cat_shapes = [
+  'botox'    => '14% 50% 50% 50%',
+  'filler'   => '50% 14% 50% 50%',
+  'lasers'   => '50% 50% 14% 50%',
+  'skincare' => '50% 50% 50% 14%',
+];
+$cat_shape = isset($cat_shapes[$cat_key]) ? $cat_shapes[$cat_key] : '14% 50% 50% 50%';
+
+// --- ICÔNE PROPRE À CHAQUE UNIVERS ---
+$cat_icons = [
+  'botox'    => '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 4 6 8 6 12a6 6 0 01-12 0c0-4 3-8 6-12z"/></svg>',
+  'filler'   => '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6-6 6 6-6 13-6-13z"/><path d="M6 9h12"/></svg>',
+  'lasers'   => '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>',
+  'skincare' => '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.6L19 10l-5.2 1.4L12 17l-1.8-5.6L5 10l5.2-1.4L12 3z"/></svg>',
+];
+$cat_icon = isset($cat_icons[$cat_key]) ? $cat_icons[$cat_key] : '';
 ?>
 
-<!-- HERO WOW MODERNE (TYPO SOFT) AVEC PHOTO DE FOND -->
-<section class="cat-hero-wow">
-  <?php if ($hero_bg): ?>
-    <img class="cat-hero-bg-img" src="<?php echo $hero_bg; ?>" alt="">
-  <?php endif; ?>
-  <div class="container">
-    <div class="hero-wow-content">
-      <!-- Cercles décoratifs (s'affichent seulement si PAS de photo) -->
-      <?php if(!$hero_bg): ?>
-      <div class="wow-circle-1"></div>
-      <div class="wow-circle-2"></div>
+<!-- ========================================================== -->
+<!-- HERO ÉDITORIAL SPLIT — texte + grand chiffre / photo blob   -->
+<!-- ========================================================== -->
+<section class="cat-split-hero">
+  <div class="container csh-grid">
+    <div class="csh-text">
+     
+      <h1 class="csh-title"><?php echo $cat['titre']; ?></h1>
+      <?php if ($cat_tagline): ?>
+        <p class="csh-tagline"><?php echo $cat_tagline; ?></p>
       <?php endif; ?>
-      
-      
-      <h1 class="wow-title">
-        <span class="wow-highlight"><?php echo $cat['titre']; ?></span>
-      </h1>
-      
-      <p class="wow-intro"><?php echo $cat['intro']; ?></p>
-      
-      <div class="wow-actions">
+      <p class="csh-intro"><?php echo $cat['intro']; ?></p>
+      <div class="csh-actions">
         <a class="btn-wow-primary" href="#soins-liste">
           Explorer les soins
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
+        
+      </div>
+    </div>
+
+    <div class="csh-visual">
+      <div class="csh-orbit"></div>
+      <div class="csh-frame-line" style="border-radius:<?php echo $cat_shape; ?>;"></div>
+      <?php if ($hero_bg): ?>
+        <img class="csh-photo" style="border-radius:<?php echo $cat_shape; ?>;" src="<?php echo $hero_bg; ?>" alt="<?php echo $cat['titre']; ?>">
+      <?php else: ?>
+        <div class="csh-photo csh-photo-placeholder" style="border-radius:<?php echo $cat_shape; ?>;">
+          <span class="no-photo-label">Photo à ajouter</span>
+        </div>
+      <?php endif; ?>
+      <div class="csh-plate">
+        <b><?php echo $cat['titre']; ?></b>
       </div>
     </div>
   </div>
