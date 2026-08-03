@@ -1476,20 +1476,32 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
     height: 50px;
   }
 }
+/* --- LOGO EN IMAGE --- */
 .logo-link {
   display: flex;
   align-items: center;
   text-decoration: none;
   border: none;
   outline: none;
-  margin-left: 15px; /* ← décale le logo de 15px par rapport au bord */
+  margin-left: 15px;
 }
 
 .logo-img {
-  height: 70px;
+  height: 60px;          /* taille par défaut (mobile) */
   width: auto;
-  max-height: 80px;
+  max-height: 70px;
   display: block;
   border: none;
   background: transparent;
+}
+
+/* SUR PC (écrans larges) : on agrandit le logo */
+@media (min-width: 769px) {
+  .logo-img {
+    height: 100px;       /* taille plus grande sur desktop */
+    max-height: 120px;
+  }
+  .logo-link {
+    margin-left: 20px;   /* un peu plus d'espace sur desktop */
+  }
 }
