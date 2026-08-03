@@ -8,7 +8,8 @@ require __DIR__ . '/header.php';
   <div class="container hero-grid">
     <!-- Texte -->
     <div>
-      <h1>Révélez votre <em>éclat naturel</em></h1>
+      <h1>Révélez l’<em>éclat</em> qui sommeille en vous</h1>
+      <p class="lead">Des soins sur mesure pour révéler votre beauté unique, dans un cadre d’exception.</p>
       <div class="hero-actions">
         <a class="btn-primary" href="#soins">
           Découvrir les soins
