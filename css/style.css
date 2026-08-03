@@ -802,7 +802,12 @@ section h2,
 @media (max-width: 900px) {
   nav ul{display:none;}
   
-  /* Hero : DEUX COLONNES même sur mobile */
+  /* Hero : réduire l'espace en haut sur mobile */
+  .hero {
+    padding-top: 80px !important;
+    min-height: 90vh;
+  }
+  
   .hero-grid {
     grid-template-columns: 1fr 1fr !important;
     gap: 15px;
@@ -918,7 +923,12 @@ section h2,
     bottom: -12px;
   }
   
-  /* Hero : deux colonnes avec des tailles plus grandes */
+  /* Hero : encore moins d'espace sur téléphone */
+  .hero {
+    padding-top: 60px !important;
+    min-height: 85vh;
+  }
+  
   .hero-grid {
     grid-template-columns: 1fr 1fr !important;
     gap: 12px;
