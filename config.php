@@ -21,10 +21,6 @@ $img_filler    = "images/filler.jpg";
 $img_lasers    = "images/lasers.jpg";
 $img_skincare  = "images/skincare.jpg";
 
-// Photos de la clinique (section "Dans les coulisses de Glamour Clinic")
-$img_clinique_1 = "images/clinique-accueil.jpg";
-$img_clinique_2 = "images/clinique-salle.jpg";
-$img_clinique_3 = "images/clinique-laser.jpg";
 
 // IMAGES DE FOND POUR LES PAGES CATÉGORIES (à ajouter dans images/)
 $hero_bg_images = [
