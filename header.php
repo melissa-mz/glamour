@@ -31,7 +31,7 @@ if (!isset($page_title)) { $page_title = "Glamour Clinic — Dr. Draoui Sadjia";
 
   <nav id="mainNav">
     <ul>
-      <li><a href="index.php#about">Accueil</a></li>
+      <li><a href="index.php">Accueil</a></li>
       <li><a href="botox.php">Botox</a></li>
       <li><a href="filler.php">Filler</a></li>
       <li><a href="lasers.php">Lasers</a></li>
