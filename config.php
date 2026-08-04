@@ -21,13 +21,49 @@ $img_filler    = "images/filler.jpg";
 $img_lasers    = "images/lasers.jpg";
 $img_skincare  = "images/skincare.jpg";
 
-
 // IMAGES DE FOND POUR LES PAGES CATÉGORIES (à ajouter dans images/)
 $hero_bg_images = [
   'filler'   => 'images/hero-filler.jpg',
   'lasers'   => 'images/hero-lasers.png',
   'skincare' => 'images/hero-skincare.png',
   'botox'    => 'images/hero-botox.jpg',
+];
+
+$before_after = [
+
+  'botox' => [
+    [
+      'avant' => 'images/botox-1-avant.jpg',
+      'apres' => 'images/botox-1-apres.jpg',
+      'label' => 'Front & pattes d\'oie',
+    ],
+    
+  ],
+
+  'filler' => [
+    [
+      'avant' => 'images/results/filler-1-avant.jpg',
+      'apres' => 'images/results/filler-1-apres.jpg',
+      'label' => 'Volume lèvres',
+    ],
+  ],
+
+  'lasers' => [
+    [
+      'avant' => 'images/results/lasers-1-avant.jpg',
+      'apres' => 'images/results/lasers-1-apres.jpg',
+      'label' => 'Épilation laser',
+    ],
+  ],
+
+  'skincare' => [
+    [
+      'avant' => 'images/results/skincare-1-avant.jpg',
+      'apres' => 'images/results/skincare-1-apres.jpg',
+      'label' => 'Éclat & grain de peau',
+    ],
+  ],
+
 ];
 
 function wa_link($number, $message) {
@@ -38,7 +74,7 @@ $msg_default = "Bonjour, je souhaite prendre rendez-vous à Glamour Clinic.";
 $msg_botox   = "Bonjour, je souhaite des infos sur le Botox.";
 $msg_mariee  = "Bonjour, je suis future mariée et je souhaite des infos sur le programme dédié.";
 
-$maps_embed_url = "https://www.google.com/maps?q=36.7626875,3.3658125&z=17&output=embed";
+$maps_embed_url = "https://www.google.com/maps?q=" . urlencode($maps_query) . "&output=embed";
 
 /* =========================================================
    CATALOGUE DES SOINS PAR CATÉGORIE
@@ -61,7 +97,7 @@ $categories = [
 
   "filler" => [
     "titre" => "Filler &amp; Comblement",
-
+    "intro" => "Un remodelage précis et naturel à l'acide hyaluronique, adapté à chaque zone du visage pour un résultat qui respecte votre morphologie.",
     "soins" => [
       [
         "slug"  => "filler-levres",

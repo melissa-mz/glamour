@@ -7,6 +7,9 @@ $total_soins = count($cat['soins']);
 // --- RÉCUPÉRATION DE L'IMAGE DE FOND DEPUIS CONFIG.PHP ---
 $hero_bg = isset($hero_bg_images[$cat_key]) ? $hero_bg_images[$cat_key] : '';
 
+// --- RÉSULTATS AVANT / APRÈS PROPRES À CETTE CATÉGORIE ---
+$results = isset($before_after[$cat_key]) ? $before_after[$cat_key] : [];
+
 
 // --- PHRASE D'ACCROCHE PROPRE À CHAQUE UNIVERS ---
 $cat_taglines = [
@@ -104,6 +107,53 @@ $cat_icon = isset($cat_icons[$cat_key]) ? $cat_icons[$cat_key] : '';
 </section>
 
 <!-- ========================================================== -->
+<!-- RÉSULTATS AVANT / APRÈS — slider glissant                   -->
+<!-- ========================================================== -->
+<?php if (!empty($results)): ?>
+<section class="ba-results" id="resultats">
+  <div class="container">
+    <div class="section-head reveal" style="text-align:center;margin:0 auto 50px;">
+      <div class="eyebrow">Résultats</div>
+      <h2>Avant / Après</h2>
+      <p class="ba-sub">Faites glisser le curseur pour révéler la transformation.</p>
+    </div>
+
+    <div class="ba-slider-wrap reveal">
+      <div class="ba-slider" id="baSlider">
+        <div class="ba-img ba-after" id="baAfterImg" style="background-image:url('<?php echo $results[0]['apres']; ?>');"></div>
+        <span class="ba-badge ba-badge-after">Après</span>
+
+        <div class="ba-clip" id="baClip">
+          <div class="ba-img ba-before" id="baBeforeImg" style="background-image:url('<?php echo $results[0]['avant']; ?>');"></div>
+          <span class="ba-badge ba-badge-before">Avant</span>
+        </div>
+
+        <div class="ba-handle" id="baHandle">
+          <span class="ba-handle-line"></span>
+          <span class="ba-handle-grip">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>
+          </span>
+        </div>
+      </div>
+
+      <?php if (count($results) > 1): ?>
+      <div class="ba-dots" id="baDots">
+        <?php foreach ($results as $i => $r): ?>
+          <button
+            class="ba-dot <?php echo $i === 0 ? 'active' : ''; ?>"
+            data-avant="<?php echo $r['avant']; ?>"
+            data-apres="<?php echo $r['apres']; ?>"
+            aria-label="<?php echo isset($r['label']) ? htmlspecialchars($r['label']) : 'Résultat ' . ($i + 1); ?>"
+          ></button>
+        <?php endforeach; ?>
+      </div>
+      <?php endif; ?>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
+
+<!-- ========================================================== -->
 <!-- BOUTON UNIQUE & MODALE (POP-UP) DE RENDEZ-VOUS             -->
 <!-- ========================================================== -->
 <div class="container" style="text-align:center; margin-top:40px; padding-bottom:80px;">
@@ -194,6 +244,70 @@ function buildWhatsAppMessage(form) {
   form.action = `https://wa.me/<?php echo $whatsapp_number; ?>?text=` + encodeURIComponent(message);
   return true;
 }
+
+// ============================================================
+// SLIDER AVANT / APRÈS — glisser à la souris ou au doigt
+// ============================================================
+(function () {
+  const slider = document.getElementById('baSlider');
+  if (!slider) return;
+
+  const clip       = document.getElementById('baClip');
+  const handle      = document.getElementById('baHandle');
+  const beforeImg   = document.getElementById('baBeforeImg');
+  const afterImg    = document.getElementById('baAfterImg');
+  const dots        = document.querySelectorAll('.ba-dot');
+
+  // La photo "avant" doit toujours faire la même largeur que le
+  // slider entier (pas la largeur réduite du clip), sinon l'image
+  // se recadre visuellement pendant le glissement.
+  function syncWidth() {
+    const w = slider.getBoundingClientRect().width;
+    beforeImg.style.width = w + 'px';
+  }
+  window.addEventListener('resize', syncWidth);
+  syncWidth();
+
+  function setPos(percent) {
+    percent = Math.max(0, Math.min(100, percent));
+    clip.style.width = percent + '%';
+    handle.style.left = percent + '%';
+  }
+  setPos(50);
+
+  let dragging = false;
+
+  function moveFromEvent(e) {
+    const rect = slider.getBoundingClientRect();
+    const clientX = e.clientX !== undefined ? e.clientX : (e.touches && e.touches[0].clientX);
+    if (clientX === undefined) return;
+    const x = clientX - rect.left;
+    setPos((x / rect.width) * 100);
+  }
+
+  slider.addEventListener('pointerdown', function (e) {
+    dragging = true;
+    slider.setPointerCapture(e.pointerId);
+    moveFromEvent(e);
+  });
+  slider.addEventListener('pointermove', function (e) {
+    if (!dragging) return;
+    moveFromEvent(e);
+  });
+  slider.addEventListener('pointerup', function () { dragging = false; });
+  slider.addEventListener('pointercancel', function () { dragging = false; });
+
+  // Navigation entre plusieurs résultats (points sous le slider)
+  dots.forEach(function (dot) {
+    dot.addEventListener('click', function () {
+      dots.forEach(d => d.classList.remove('active'));
+      dot.classList.add('active');
+      afterImg.style.backgroundImage = "url('" + dot.dataset.apres + "')";
+      beforeImg.style.backgroundImage = "url('" + dot.dataset.avant + "')";
+      setPos(50);
+    });
+  });
+})();
 </script>
 
 <!-- ========================================================== -->
