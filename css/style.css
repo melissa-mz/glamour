@@ -116,7 +116,11 @@ nav a:hover::after{width:100%;}
   z-index: 1;
   border-radius: inherit;
 }
-
+.cat-hero-wow,
+.services-grands-carres,
+.cat-split-hero {
+  background: #FFFFFF !important;
+}
 .hero-ambiance-circle {
   position: absolute;
   width: 60%;
