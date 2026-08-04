@@ -1,13 +1,13 @@
 :root{
-  --blanc:rgba(255, 255, 255, 0.95);        /* Fond principal : BLANC PUR */
-  --blanc-casse:#F9F7F4;  /* Blanc cassé très subtil pour la section témoignages */
-  --charbon:#211C17;      /* Texte : charbon chaud (plus doux qu'un noir pur, plus premium avec le beige) */
+  --blanc:rgba(255, 255, 255, 0.95);
+  --blanc-casse:#F9F7F4;
+  --charbon:#211C17;
   --gris:#4A4A4A;
   --gris-clair:#E8DBCF;
-  --bordeaux:#5C1A2E;     /* Pour les boutons */
-  --bordeaux-fonce:#230A13; /* Bordeaux ultra foncé, pour le footer */
-  --or:#BF9550;           /* Pour les boutons */
-  --beige:#F2EBE0;        /* Beige UNIQUEMENT pour Footer et Category Hero */
+  --bordeaux:#5C1A2E;
+  --bordeaux-fonce:#230A13;
+  --or:#BF9550;
+  --beige:#F2EBE0;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -40,7 +40,7 @@ nav ul {
   display: flex;
   gap: 30px;
   align-items: center;
-  margin-right: 40px;   /* ← AJOUTE CETTE LIGNE */
+  margin-right: 40px;
 }nav a{color:var(--charbon);font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;position:relative;padding-bottom:4px;}
 nav a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--or);transition:width .35s ease;}
 nav a:hover::after{width:100%;}
@@ -301,13 +301,8 @@ footer ul li a:hover{color:var(--or);}
 .wa-float svg{width:30px;height:30px;fill:#25D366;transition:fill .3s ease;}
 .wa-float:hover svg{fill:#fff;}
 
-/* ============================================================
-   CATEGORY DETAIL PAGES - NOUVEAU DESIGN WOW (TYPO SOFT)
-   ============================================================ */
-
-/* --- CATEGORY HERO WOW (Beige, typo fine et douce) --- */
 .cat-hero-wow {
-  background: var(--blanc-casse); /* Fond aligné sur la section témoignages */
+  background: var(--blanc-casse);
   color: var(--charbon);
   padding: 180px 0 90px;
   position: relative;
@@ -423,7 +418,7 @@ footer ul li a:hover{color:var(--or);}
 
 /* --- SERVICES SHOWCASE (Grille luxe sur fond Blanc) --- */
 .services-showcase {
-  background: var(--blanc); /* Blanc pur */
+  background: var(--blanc);
   padding: 100px 0 120px;
 }
 .section-head-showcase { margin-bottom: 60px; text-align: center; max-width: 100%; }
@@ -503,9 +498,6 @@ footer ul li a:hover{color:var(--or);}
 .btn-card-cta svg { transition: transform 0.3s; }
 .btn-card-cta:hover svg { transform: translateX(4px); }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
 
 @media (max-width:900px){
   nav ul{display:none;}
@@ -524,7 +516,7 @@ footer ul li a:hover{color:var(--or);}
   .cat-hero-wow { padding: 140px 0 60px; min-height: auto; }
   .wow-title { font-size: clamp(1.8rem, 5vw, 2.8rem); }
   .services-grid-showcase { grid-template-columns: 1fr; gap: 30px; }
-  .wow-circle-1, .wow-circle-2 { display: none; } /* Masquer les cercles sur mobile */
+  .wow-circle-1, .wow-circle-2 { display: none; }
 }
 
 @media (max-width:480px){
@@ -534,136 +526,179 @@ footer ul li a:hover{color:var(--or);}
   .btn-wow-primary { padding: 14px 26px; font-size: 0.7rem; border-radius: 40px; }
   .service-card-body { padding: 20px; }
 }
-/* ============================================================
-   SERVICES GRANDS CARRES - IMPOSANTS, SANS BORDURE, PREMIUM
-   ============================================================ */
 
+/* ============================================================
+   SERVICES GRANDS CARRES — BORDS DROITS, TAG SUR IMAGE, BOUTON BORDEAUX
+   ============================================================ */
 .services-grands-carres {
-  background: var(--blanc-casse); /* Fond aligné sur la section témoignages */
+  background: var(--blanc-casse);
   padding: 100px 0 120px;
 }
 
 .grands-carres-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Carte : bords droits */
 .grand-carre {
   display: flex;
   flex-direction: column;
-  background: var(--blanc); /* Fond blanc pour chaque carré */
-  border-radius: 20px;
-  padding: 20px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  /* PAS DE BORDURE */
+  background: var(--blanc);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 20px 50px -30px rgba(33,20,23,0.18);
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1),
+              box-shadow 0.5s ease,
+              border-color 0.5s ease;
+  border-radius: 0;
 }
 
 .grand-carre:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+  transform: translateY(-10px);
+  box-shadow: 0 34px 70px -28px rgba(33,20,23,0.28);
+  border-color: rgba(92,26,46,0.14);
 }
 
+/* --- IMAGE AVEC TAG SUPERPOSÉ --- */
 .grand-carre-image {
+  position: relative;
   width: 100%;
-  aspect-ratio: 1/1; /* CARRÉ PARFAIT */
-  border-radius: 16px;
+  aspect-ratio: 4/3.1;
   background-color: var(--gris-clair);
-  transition: transform 0.6s ease;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);
+  overflow: hidden;
 }
 
 .grand-carre:hover .grand-carre-image {
-  transform: scale(1.02);
+  transform: scale(1.06);
+}
+
+/* Overlay subtil */
+.grand-carre-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(33,20,23,0.55) 0%, rgba(33,20,23,0) 45%);
+  opacity: 0.75;
+  transition: opacity .5s ease;
+}
+.grand-carre:hover .grand-carre-image::after {
+  opacity: 0.9;
 }
 
 .grand-carre-content {
-  padding: 20px 6px 6px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-}
-
-.grand-tag {
-  font-family: 'Jost', sans-serif;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--or);
+  gap: 12px;                /* espace entre chaque élément */
+  padding: 30px 32px 34px;
+  flex: 1;                  /* permet de prendre toute la hauteur */
 }
 
 .grand-carre-content h3 {
-  font-family: 'Jost', sans-serif;
-  font-size: 1.2rem;
+  margin: 0;                /* pas de marge inutile */
+  font-size: 1.32rem;
   font-weight: 500;
-  color: var(--charbon);
-  margin: 0;
-  line-height: 1.2;
 }
 
 .grand-carre-content p {
-  font-size: 0.9rem;
-  color: var(--gris);
-  font-weight: 300;
-  line-height: 1.6;
-  margin: 0 0 8px 0;
+  margin: 0 0 22px 0;       /* marge basse pour éloigner du bouton */
+  flex: 1;                  /* pousse le bouton vers le bas si besoin */
 }
 
 .grand-btn {
-  display: inline-block;
+  align-self: flex-start;   /* aligné à gauche (ou center si vous préférez) */
+  margin-top: 0;            /* on retire le margin-top:10px */
+  padding: 13px 24px;
+  font-size: 0.74rem;
+  /* ... le reste de votre style existant ... */
+}
+
+.grand-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   align-self: flex-start;
-  margin-top: 4px;
-  font-size: 0.75rem;
+  padding: 13px 24px;
+  margin-top: 10px;        /* ← ici on décale le bouton vers le bas */
+  border-radius: 0;
+  background: var(--bordeaux);
+  color: var(--blanc);
+  font-size: 0.74rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--bordeaux);
-  border-bottom: 1.5px solid var(--bordeaux);
-  padding-bottom: 3px;
-  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 10px 24px -12px rgba(92,26,46,0.45);
+  transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+  cursor: pointer;
 }
 
 .grand-btn:hover {
-  color: var(--or);
-  border-color: var(--or);
-  padding-right: 10px;
+  background: var(--charbon);
+  gap: 14px;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -12px rgba(33,20,23,0.4);
+  color: var(--blanc);
+  padding-right: 20px;
 }
 
-/* Responsive */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   .grands-carres-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 26px;
   }
-  .grand-carre {
-    padding: 16px;
+  .grand-carre-content {
+    padding: 26px 26px 28px;
+    margin-top: -30px;
   }
   .grand-carre-content h3 {
-    font-size: 1.1rem;
+    font-size: 1.18rem;
   }
   .grand-carre-content p {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
+  }
+  .grand-tag {
+    font-size: 0.6rem;
+    padding: 6px 14px;
+    bottom: 14px;
+    left: 18px;
+  }
+  .grand-btn {
+    padding: 11px 20px;
+    font-size: 0.68rem;
   }
 }
 
 @media (max-width: 480px) {
   .grands-carres-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 20px;
   }
-  .grand-carre {
-    padding: 14px;
+  .grand-carre-content {
+    padding: 22px 22px 24px;
+    margin-top: -26px;
   }
   .grand-carre-content h3 {
-    font-size: 1rem;
+    font-size: 1.08rem;
   }
   .grand-carre-content p {
-    font-size: 0.8rem;
+    font-size: 0.84rem;
+  }
+  .grand-tag {
+    font-size: 0.55rem;
+    padding: 5px 12px;
+    bottom: 12px;
+    left: 14px;
   }
   .grand-btn {
-    font-size: 0.7rem;
+    padding: 10px 18px;
+    font-size: 0.65rem;
   }
   .hero{min-height:auto;padding-top:110px !important;}
 .hero-grid{grid-template-columns:1.15fr 1fr !important;gap:14px;text-align:left;}
@@ -676,22 +711,18 @@ footer ul li a:hover{color:var(--or);}
 .hero-ambiance-text span:first-child,
 .hero-ambiance-text span:last-child{font-size:0.6rem;}
 }
-/* ============================================================
-   CATEGORY HERO - PHOTO PLEINE LARGEUR EN FOND
-   ============================================================ */
 
 .cat-hero-image {
   position: relative;
-  min-height: 420px; /* Hauteur du Hero */
+  min-height: 420px;
   display: flex;
   align-items: center;
-  background-color: var(--blanc-casse); /* Fallback si pas d'image */
+  background-color: var(--blanc-casse);
   background-size: cover;
   background-position: center;
   overflow: hidden;
 }
 
-/* Voile noir subtil pour que le texte reste lisible */
 .cat-hero-image::before {
   content: '';
   position: absolute;
@@ -893,12 +924,9 @@ html{scrollbar-width:thin;scrollbar-color:var(--bordeaux) var(--beige);}
 .trust-item b{display:block;font-family:'Jost',sans-serif;font-weight:500;font-size:2.2rem;color:var(--bordeaux);line-height:1;margin-bottom:8px;}
 .trust-item span{display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gris);font-weight:600;}
 
-/* ============================================================
-   TÉMOIGNAGES — FOND BLANC CASSÉ + CADRES BIEN DÉFINIS
-   ============================================================ */
 
 .testimonials {
-  background: var(--blanc-casse); /* Fond blanc cassé très subtil */
+  background: var(--blanc-casse);
   padding: 100px 0 120px;
 }
 
@@ -912,8 +940,8 @@ html{scrollbar-width:thin;scrollbar-color:var(--bordeaux) var(--beige);}
   background: var(--blanc);
   border-radius: 20px;
   padding: 36px 32px 32px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.04); /* Ombre subtile */
-  border: 1px solid var(--gris-clair); /* Bordure beige claire bien visible */
+  box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+  border: 1px solid var(--gris-clair);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
 }
@@ -921,7 +949,7 @@ html{scrollbar-width:thin;scrollbar-color:var(--bordeaux) var(--beige);}
 .testimonial-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 50px rgba(0,0,0,0.08);
-  border-color: var(--bordeaux); /* Bordure devient bordeaux au survol */
+  border-color: var(--bordeaux);
 }
 
 .testimonial-card .quote-mark {
@@ -1035,11 +1063,7 @@ body{animation:pageFadeIn .5s ease;}
 }
 
 /* ============================================================
-   ABOUT WOW — nouvelle mise en scène du Dr. Draoui
-   ============================================================ */
-.about-wow{background:var(--blanc);}
-/* ============================================================
-   ABOUT — photo simple, sans forme, sans bordure
+   ABOUT — photo simple, sans forme, sans bordure, coins arrondis
    ============================================================ */
 .about-editorial {
   background: var(--blanc-casse);
@@ -1054,7 +1078,7 @@ body{animation:pageFadeIn .5s ease;}
   align-items: center;
 }
 
-/* --- IMAGE SIMPLE --- */
+/* --- IMAGE AVEC COINS ARRONDIS --- */
 .about-image-area {
   position: relative;
   display: flex;
@@ -1068,6 +1092,7 @@ body{animation:pageFadeIn .5s ease;}
   aspect-ratio: 3/4;
   overflow: hidden;
   background: #f0ebe4;
+  border-radius: 32px;   /* ← coins arrondis généreux */
 }
 
 .about-doctor-simple {
@@ -1187,6 +1212,7 @@ body{animation:pageFadeIn .5s ease;}
   .about-image-simple {
     max-width: 340px;
     margin: 0 auto;
+    border-radius: 24px;
   }
   .about-text-editorial {
     text-align: center;
@@ -1222,6 +1248,7 @@ body{animation:pageFadeIn .5s ease;}
   }
   .about-image-simple {
     max-width: 260px;
+    border-radius: 20px;
   }
   .about-text-editorial h2 {
     font-size: 1.9rem;
@@ -1238,204 +1265,7 @@ body{animation:pageFadeIn .5s ease;}
     gap: 8px;
   }
 }
-.about-badge-editorial span {
-  color: var(--or);
-  margin-right: 6px;
-}
 
-/* --- Partie texte --- */
-.about-text-editorial {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.about-eyebrow {
-  font-size: 0.7rem;
-  letter-spacing: 0.45em;
-  text-transform: uppercase;
-  color: var(--or);
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.about-text-editorial h2 {
-  font-size: clamp(2.4rem, 4vw, 3.4rem);
-  font-weight: 400;
-  margin: 0;
-  line-height: 1.1;
-  background: linear-gradient(135deg, var(--charbon) 35%, var(--bordeaux) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: inline-block;
-}
-
-.about-underline {
-  width: 50px;
-  height: 3px;
-  background: var(--or);
-  margin: 4px 0 12px 0;
-  border-radius: 10px;
-}
-
-.about-bio {
-  font-size: 1.05rem;
-  line-height: 1.9;
-  color: #4a4a4a;
-  margin: 0;
-  max-width: 520px;
-}
-
-.about-quote {
-  font-family: 'Jost', sans-serif;
-  font-size: 1.2rem;
-  font-style: italic;
-  font-weight: 300;
-  color: var(--bordeaux);
-  opacity: 0.75;
-  margin: 8px 0 4px 0;
-  padding-left: 18px;
-  border-left: 3px solid var(--or);
-  max-width: 400px;
-  line-height: 1.6;
-}
-
-.about-signature-editorial {
-  margin-top: 4px;
-}
-
-.about-signature-editorial span {
-  font-family: 'Jost', sans-serif;
-  font-size: 1.1rem;
-  font-style: italic;
-  color: var(--charbon);
-  opacity: 0.7;
-  letter-spacing: 0.02em;
-}
-
-/* Trois piliers */
-.about-pillars {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.pillar {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  font-size: 0.95rem;
-  font-weight: 400;
-  color: var(--charbon);
-}
-
-.pillar-icon {
-  color: var(--or);
-  font-size: 0.9rem;
-  opacity: 0.8;
-  width: 20px;
-  text-align: center;
-  flex-shrink: 0;
-}
-
-.pillar-text {
-  border-bottom: 1px dashed rgba(0,0,0,0.05);
-  padding-bottom: 2px;
-}
-
-/* --- Responsive pour cette section --- */
-@media (max-width: 1000px) {
-  .about-editorial-grid {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-
-  .about-image-blob {
-    max-width: 340px;
-    margin: 0 auto;
-  }
-
-  .about-orb {
-    width: 200px;
-    height: 200px;
-    top: -20px;
-    right: 10px;
-  }
-
-  .about-badge-editorial {
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -18px;
-  }
-
-  .about-text-editorial {
-    text-align: center;
-    align-items: center;
-  }
-
-  .about-bio {
-    max-width: 100%;
-  }
-
-  .about-quote {
-    max-width: 100%;
-    padding-left: 0;
-    border-left: none;
-    padding-top: 8px;
-    border-top: 2px solid var(--or);
-  }
-
-  .about-underline {
-    margin: 4px auto 12px auto;
-  }
-
-  .about-pillars {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px 24px;
-  }
-
-  .pillar {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-editorial {
-    padding: 70px 0 90px;
-  }
-
-  .about-image-blob {
-    max-width: 260px;
-  }
-
-  .about-text-editorial h2 {
-    font-size: 1.9rem;
-  }
-
-  .about-bio {
-    font-size: 0.95rem;
-  }
-
-  .about-quote {
-    font-size: 1rem;
-    padding-top: 6px;
-  }
-
-  .about-pillars {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .about-badge-editorial {
-    font-size: 0.7rem;
-    padding: 10px 18px;
-    bottom: -12px;
-  }
-}
 .about-wow-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:90px;align-items:center;}
 
 .about-visual{position:relative;padding:0 30px 40px 0;}
@@ -1736,9 +1566,6 @@ section h2 {
   display: inline-block;
 }
 
-/* ============================================================
-   ESPACE WOW — une seule photo, typographie éditoriale
-   ============================================================ */
 .espace-wow{background:var(--blanc-casse);padding:150px 0;position:relative;overflow:hidden;}
 
 .espace-watermark{
@@ -1836,13 +1663,13 @@ section h2 {
 
 @media (max-width: 900px){
   .cat-hero-wow{
-    min-height: clamp(320px, 46vh, 420px) !important; /* neutralise le min-height:auto existant */
+    min-height: clamp(320px, 46vh, 420px) !important;
   }
 }
 @media (max-width: 480px){
   .cat-hero-wow{
     min-height: 280px !important;
-    background-position: center 30% !important; /* remonte légèrement le point focal sur petit écran */
+    background-position: center 30% !important;
   }
 }
 
@@ -1851,9 +1678,8 @@ section h2 {
   position:absolute;inset:0;z-index:0;
   width:100%;height:100%;
   object-fit:cover;
-  object-position:center 25%; /* remonte le cadrage pour garder le haut de la photo (visages, etc.) visible */
+  object-position:center 25%;
 }
-/* le voile sombre passe au-dessus de l'image, sous le texte */
 .cat-hero-wow{z-index:0;}
 .cat-hero-wow::before{z-index:1;}
 .hero-wow-content{z-index:2;}
@@ -1864,7 +1690,6 @@ section h2 {
 
 /* ============================================================
    MENU MOBILE — hamburger + panneau glissant + accordéon
-   (classes/IDs alignés sur header.php : .hamburger, #mainNav.open)
    ============================================================ */
 .hamburger{
   display:none;
@@ -1876,12 +1701,10 @@ section h2 {
   display:block;width:24px;height:2px;background:var(--charbon);
   transition:transform .3s ease, opacity .3s ease;
 }
-/* Anime les 3 barres en croix quand le menu est ouvert */
 header:has(#mainNav.open) .hamburger span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 header:has(#mainNav.open) .hamburger span:nth-child(2){opacity:0;}
 header:has(#mainNav.open) .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
-/* Voile sombre derrière le panneau, purement visuel (le panneau reste au-dessus) */
 nav#mainNav::before{
   content:'';position:fixed;inset:0;
   background:rgba(33,20,23,0.45);
@@ -1929,17 +1752,17 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
   display: flex;
   align-items: center;
   text-decoration: none;
-  border: none;      /* aucune bordure autour du lien */
-  outline: none;     /* pas de contour au focus */
+  border: none;
+  outline: none;
 }
 
 .logo-img {
-  height: 70px;        /* plus grand que 50px */
+  height: 70px;
   width: auto;
   max-height: 80px;
   display: block;
-  border: none;        /* pas de bordure sur l'image */
-  background: transparent; /* si jamais un fond blanc apparaît */
+  border: none;
+  background: transparent;
 }
 
 /* Sur tablette */
@@ -1966,7 +1789,7 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
 }
 
 .logo-img {
-  height: 60px;          /* taille par défaut (mobile) */
+  height: 60px;
   width: auto;
   max-height: 70px;
   display: block;
@@ -1977,11 +1800,11 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
 /* SUR PC (écrans larges) : on agrandit le logo */
 @media (min-width: 769px) {
   .logo-img {
-    height: 100px;       /* taille plus grande sur desktop */
+    height: 100px;
     max-height: 120px;
   }
   .logo-link {
-    margin-left: 20px;   /* un peu plus d'espace sur desktop */
+    margin-left: 20px;
   }
 }
 /* Forcer le fond blanc PUR du panneau mobile */
@@ -1995,9 +1818,7 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
     box-shadow: -30px 0 60px rgba(0, 0, 0, 0.08);
   }
 }
-/* ============================================================
-   HERO — effet escalier, compact, sans vide
-   ============================================================ */
+
 .hero-glamour {
   min-height: auto;
   display: flex;
@@ -2012,7 +1833,7 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 30px;  /* réduit pour moins de vide */
+  gap: 30px;
   max-width: 1150px;
   width: 100%;
   margin: 0 auto;
@@ -2022,7 +1843,7 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
 .hero-glamour-stair {
   display: flex;
   flex-direction: column;
-  gap: 4px;   /* très serré */
+  gap: 4px;
   max-width: 520px;
   flex-shrink: 0;
 }
@@ -2048,7 +1869,7 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
   margin: 0;
   letter-spacing: -0.02em;
   text-align: left;
-  padding-left: 40px;  /* décalé vers la droite (escalier) */
+  padding-left: 40px;
   border-left: 3px solid var(--or);
   padding-left: 20px;
 }
@@ -2061,7 +1882,7 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
   margin: 6px 0 0 0;
   letter-spacing: 0.04em;
   text-align: left;
-  padding-left: 80px;  /* encore plus décalé */
+  padding-left: 80px;
   font-style: italic;
 }
 
@@ -2070,7 +1891,7 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
   width: 50px;
   height: 2px;
   background: var(--or);
-  margin: 8px 0 8px 80px;  /* aligné avec la ligne3 */
+  margin: 8px 0 8px 80px;
   border-radius: 4px;
 }
 
@@ -2091,7 +1912,7 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
-  margin-left: 80px;  /* aligné avec la ligne3 */
+  margin-left: 80px;
   width: fit-content;
 }
 
@@ -2124,8 +1945,8 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
   object-fit: cover;
   border-radius: 200px;
   border: 8px solid var(--blanc);
-  outline: 3px solid var(--bordeaux);   /* ← AJOUTE */
-  outline-offset: 6px;                  /* ← AJOUTE */
+  outline: 3px solid var(--bordeaux);
+  outline-offset: 6px;
   box-shadow: 0 20px 50px rgba(33, 20, 23, 0.1);
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
@@ -2137,17 +1958,18 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
 /* --- RESPONSIVE --- */
 @media (max-width: 900px) {
   .hero-glamour {
-    padding: 30px 4% 40px;
+    padding: 40px 6% 50px;
   }
   .hero-glamour-inner {
     flex-direction: row;
     align-items: center;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 24px;
   }
   .hero-glamour-stair {
     order: 1;
     align-items: flex-start;
-    max-width: 55%;
+    max-width: 54%;
     text-align: left;
   }
   .stair-line1,
@@ -2156,14 +1978,14 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
     text-align: left;
   }
   .stair-line1{
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
   .stair-line2 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     padding-left: 14px;
   }
   .stair-line3 {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     padding-left: 30px;
   }
   .stair-divider {
@@ -2178,44 +2000,44 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
   }
   .hero-glamour-video-frame {
     order: 2;
-    width: 130px;
+    width: 175px;
     flex-shrink: 0;
   }
   .hero-glamour-video {
-    height: 190px;
-    border-radius: 100px;
-    border-width: 5px;
+    height: 245px;
+    border-radius: 110px;
+    border-width: 6px;
     outline-offset: 4px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-glamour {
-    padding: 20px 3% 30px;
+    padding: 30px 5.5% 40px;
   }
   .hero-glamour-inner {
-    gap: 14px;
+    gap: 16px;
   }
   .hero-glamour-stair {
-    max-width: 58%;
+    max-width: 56%;
   }
   .hero-glamour-video-frame {
-    width: 100px;
+    width: 140px;
   }
   .hero-glamour-video {
-    height: 150px;
-    border-width: 4px;
+    height: 195px;
+    border-width: 5px;
     border-radius: 100px;
   }
   .stair-line1 {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
   }
   .stair-line2 {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     padding-left: 10px;
   }
   .stair-line3 {
-    font-size: 0.68rem;
+    font-size: 0.7rem;
     padding-left: 24px;
   }
   .stair-divider {
@@ -2224,13 +2046,11 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
   }
   .btn-hero-glamour {
     padding: 10px 16px;
-    font-size: 0.62rem;
+    font-size: 0.64rem;
     margin-left: 24px;
   }
 }
-/* ============================================================
-   CATEGORY HERO — TEXTE BLANC PUR, POLICE STANDARD
-   ============================================================ */
+
 .cat-hero-wow .wow-title,
 .cat-hero-wow .wow-title .wow-line,
 .cat-hero-wow .wow-title .wow-highlight {
@@ -2262,11 +2082,7 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
   background: var(--or) !important;
   color: #FFFFFF !important;
 }
-/* ============================================================
-   CAT-SPLIT-HERO — nouveau hero éditorial pour Botox/Filler/
-   Lasers/Skincare. Remplace .cat-hero-wow (laissé en place,
-   inutilisé, pas besoin de le supprimer).
-   ============================================================ */
+
 .cat-split-hero{background:var(--blanc-casse);padding:150px 0 100px;overflow:hidden;}
 .csh-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 
@@ -2341,11 +2157,7 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
   .csh-title{font-size:1.3rem;}
   .csh-tagline{font-size:0.9rem;}
 }
-/* ============================================================
-   CAT-SPLIT-HERO — V2, à coller EN PLUS de la V1 déjà ajoutée
-   (celle avec .csh-grid, .csh-title, .csh-photo, etc.)
-   Ces règles complètent/affinent la V1, ne la remplacent pas.
-   ============================================================ */
+
 
 .csh-eyebrow-row{display:flex;align-items:center;gap:10px;margin-bottom:16px;position:relative;}
 .csh-icon{
