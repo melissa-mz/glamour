@@ -61,7 +61,7 @@ $categories = [
 
   "filler" => [
     "titre" => "Filler &amp; Comblement",
-    "intro" => "Un remodelage précis et naturel à l'acide hyaluronique, adapté à chaque zone du visage pour un résultat qui respecte votre morphologie.",
+
     "soins" => [
       [
         "slug"  => "filler-levres",

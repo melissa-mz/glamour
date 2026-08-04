@@ -47,7 +47,6 @@ $cat_icon = isset($cat_icons[$cat_key]) ? $cat_icons[$cat_key] : '';
       <?php if ($cat_tagline): ?>
         <p class="csh-tagline"><?php echo $cat_tagline; ?></p>
       <?php endif; ?>
-      <p class="csh-intro"><?php echo $cat['intro']; ?></p>
       <div class="csh-actions">
         <a class="btn-wow-primary" href="#soins-liste">
           Explorer les soins
