@@ -606,12 +606,6 @@ footer ul li a:hover{color:var(--or);}
   margin-top: 0;
   padding-top: 38px;
 }
-.grand-carre-content:only-child .grand-tag{
-  color: var(--bordeaux);
-  background: rgba(92,26,46,0.06);
-  border-color: rgba(92,26,46,0.15);
-  box-shadow: none;
-}
 
 .grand-tag {
   display: inline-flex;
@@ -619,20 +613,20 @@ footer ul li a:hover{color:var(--or);}
   gap: 7px;
   width: fit-content;
   font-family: 'Jost', sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--blanc);
-  background: var(--bordeaux);
-  border: 1px solid var(--bordeaux);
-  box-shadow: 0 8px 20px -10px rgba(92,26,46,0.5);
-  padding: 8px 18px;
-  border-radius: 2px;
+  color: var(--bordeaux);
+  background: var(--blanc);
+  border: 1px solid var(--or);
+  box-shadow: 0 8px 20px -12px rgba(33,20,23,0.35);
+  padding: 7px 16px;
+  border-radius: 100px;
   margin-bottom: 12px;
 }
 .grand-tag::before{
-  content:'';width:5px;height:5px;background:var(--or);flex-shrink:0;
+  content:'';width:5px;height:5px;border-radius:50%;background:var(--or);flex-shrink:0;
 }
 
 .grand-carre-content h3 {
@@ -1710,7 +1704,6 @@ section h2 {
 }
 
 /* Titres h3 dans les cartes et services */
-.grand-carre-content h3,
 .why-card h3,
 .testimonial-author b {
   background: linear-gradient(135deg, var(--charbon) 40%, var(--bordeaux) 100%);
@@ -1719,6 +1712,14 @@ section h2 {
   background-clip: text;
   color: transparent !important;
   display: inline-block;
+}
+
+/* Titre des cartes "Nos soins" : neutre, pour ne pas doubler la couleur du bouton Découvrir */
+.grand-carre-content h3{
+  color: var(--charbon) !important;
+  -webkit-text-fill-color: var(--charbon) !important;
+  background: none !important;
+  display: block;
 }
 
 /* Titres de la galerie clinique */
