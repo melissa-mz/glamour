@@ -38,7 +38,7 @@ $msg_default = "Bonjour, je souhaite prendre rendez-vous à Glamour Clinic.";
 $msg_botox   = "Bonjour, je souhaite des infos sur le Botox.";
 $msg_mariee  = "Bonjour, je suis future mariée et je souhaite des infos sur le programme dédié.";
 
-$maps_embed_url = "https://www.google.com/maps?q=" . urlencode($maps_query) . "&output=embed";
+$maps_embed_url = "https://www.google.com/maps?q=36.7626875,3.3658125&z=17&output=embed";
 
 /* =========================================================
    CATALOGUE DES SOINS PAR CATÉGORIE

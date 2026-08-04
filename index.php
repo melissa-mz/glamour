@@ -261,28 +261,31 @@ require __DIR__ . '/header.php';
         <iframe src="<?php echo $maps_embed_url; ?>" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div class="loc-card reveal">
-        <div>
-          <div class="eyebrow" style="color:var(--or);">Glamour Clinic</div>
-          <h3 style="margin-top:14px;font-size:1.8rem;color:var(--blanc);"><?php echo $address_short; ?></h3>
-          <div class="loc-list">
-            <div><b>Adresse</b><span><?php echo $address_full; ?></span></div>
-            <div><b>Téléphone</b><span><?php echo $phone_1; ?> · <?php echo $phone_2; ?> · <?php echo $phone_3; ?></span></div>
-            <div><b>Instagram</b><span>
-              <a class="loc-insta" href="<?php echo $instagram_url; ?>" target="_blank" rel="noopener">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>
-                <?php echo $instagram_handle; ?>
-              </a>
-            </span></div>
-          </div>
-        </div>
-        <div class="loc-actions">
-          <a class="btn-primary" style="justify-content:center;background:var(--or);" href="<?php echo wa_link($whatsapp_number, $msg_default); ?>" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
-          <a class="btn-insta-solid" href="<?php echo $instagram_url; ?>" target="_blank" rel="noopener">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>
-            Suivre sur Instagram
-          </a>
-        </div>
-      </div>
+  <div>
+    <div class="loc-brand">Glamour Clinic</div>
+    <h3 class="loc-title"><?php echo $address_short; ?></h3>
+    <div class="loc-list">
+      <div><b>Adresse</b><span><?php echo $address_full; ?></span></div>
+      <div><b>Téléphone</b><span><?php echo $phone_1; ?> · <?php echo $phone_2; ?> · <?php echo $phone_3; ?></span></div>
+      <div><b>Instagram</b><span>
+        <a class="loc-insta" href="<?php echo $instagram_url; ?>" target="_blank" rel="noopener">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>
+          <?php echo $instagram_handle; ?>
+        </a>
+      </span></div>
+    </div>
+  </div>
+  <div class="loc-actions">
+    <a class="btn-wa-pill" href="<?php echo wa_link($whatsapp_number, $msg_default); ?>" target="_blank" rel="noopener">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.13L2 22l5.13-1.55a9.87 9.87 0 004.91 1.32h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.06a8.1 8.1 0 01-4.15-1.14l-.3-.18-3.09.93.93-3.02-.19-.31a8.11 8.11 0 01-1.26-4.32c0-4.49 3.65-8.14 8.14-8.14s8.14 3.65 8.14 8.14-3.65 8.04-8.22 8.04zm4.47-6.1c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12s-.63.79-.78.95c-.14.16-.29.18-.53.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.11-.49.11-.11.24-.29.36-.43.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.43-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.31-.22.24-.86.84-.86 2.05s.88 2.38 1 2.54c.12.16 1.73 2.64 4.2 3.7.59.25 1.05.4 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.44-.59 1.65-1.16.2-.57.2-1.06.14-1.16-.06-.11-.22-.17-.46-.29z"/></svg>
+      Écrire sur WhatsApp
+    </a>
+    <a class="btn-insta-solid" href="<?php echo $instagram_url; ?>" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>
+      <span>Suivre sur Instagram</span>
+    </a>
+  </div>
+</div>
     </div>
   </div>
 </section>
