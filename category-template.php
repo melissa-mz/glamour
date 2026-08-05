@@ -169,8 +169,8 @@ $cat_icon = isset($cat_icons[$cat_key]) ? $cat_icons[$cat_key] : '';
     <h3>Prendre un rendez-vous</h3>
     <p style="color:var(--gris); margin-bottom:20px;">Remplissez ce formulaire pour réserver votre soin.</p>
     
-    <form id="rdvForm" action="https://wa.me/<?php echo $whatsapp_number; ?>?text=" method="get" target="_blank" onsubmit="return buildWhatsAppMessage(this)">
-      <div class="form-group">
+<form id="rdvForm" onsubmit="return buildWhatsAppMessage(event, this)">
+        <div class="form-group">
         <input type="text" name="nom" placeholder="Votre nom *" required>
       </div>
       <div class="form-group">
@@ -227,8 +227,9 @@ document.getElementById('rdvModal').addEventListener('click', function(e) {
   }
 });
 
-// Construction du message WhatsApp
-function buildWhatsAppMessage(form) {
+function buildWhatsAppMessage(e, form) {
+  e.preventDefault();
+
   let nom = form.nom.value.trim();
   let prenom = form.prenom.value.trim();
   let telephone = form.telephone.value.trim();
@@ -241,8 +242,10 @@ function buildWhatsAppMessage(form) {
   message += `Soin souhaité : ${soin}\n\n`;
   message += `Merci de me confirmer la disponibilité.`;
 
-  form.action = `https://wa.me/<?php echo $whatsapp_number; ?>?text=` + encodeURIComponent(message);
-  return true;
+  const url = `https://wa.me/<?php echo $whatsapp_number; ?>?text=` + encodeURIComponent(message);
+  window.open(url, '_blank');
+
+  return false;
 }
 
 // ============================================================
