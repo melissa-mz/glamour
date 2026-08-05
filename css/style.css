@@ -512,6 +512,9 @@ footer ul li a:hover{color:var(--or);}
 
 @media (max-width:900px){
   nav ul{display:none;}
+  header{justify-content:center;position:relative;}
+  .logo-link{margin:0 !important;}
+  .hamburger{position:absolute;right:20px;top:50%;transform:translateY(-50%);}
   .about-grid,.location-grid{grid-template-columns:1fr;}
   .hero-grid{grid-template-columns:1.3fr 1fr;gap:24px;align-items:center;}
   .hero-photo-wrap{max-width:220px;margin:0;order:0;}
