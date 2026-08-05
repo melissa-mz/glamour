@@ -61,7 +61,7 @@ require __DIR__ . '/header.php';
     <!-- Partie droite : Texte -->
     <div class="about-text-editorial reveal">
       <div class="about-eyebrow">À propos</div>
-      <h2>Dr. Draoui Sadjia</h2>
+      <h2>Dr. <strong>Draoui</strong> Sadjia</h2>
       <div class="about-underline"></div>
       <p class="about-bio">
         Fondatrice de Glamour Clinic, le Dr. Draoui Sadjia accompagne une clientèle exigeante à la recherche de résultats naturels, avec des protocoles médicaux précis et une écoute attentive de chaque projet esthétique.
@@ -96,9 +96,9 @@ require __DIR__ . '/header.php';
 </section>
 <section class="services-showcase" id="soins">
   <div class="container">
-    <div class="section-head reveal">
+    <div class="section-head reveal" style="text-align:center;margin:0 auto 70px;max-width:640px;">
       <div class="eyebrow">Nos soins</div>
-      <h2>L'excellence en carrés</h2>
+      <h2>Des soins pensés pour <strong>vous</strong></h2>
     </div>
 
     <div class="grands-carres-grid">
@@ -155,7 +155,7 @@ require __DIR__ . '/header.php';
   <div class="container">
     <div class="why-us-head reveal">
       <div class="eyebrow">Pourquoi nous choisir</div>
-      <h2>Le soin, pensé jusque dans les moindres détails</h2>
+      <h2>Pourquoi choisir <strong>Glamour</strong> Clinic</h2>
       <p>Chez Glamour Clinic, chaque étape compte — du premier échange à la dernière retouche.</p>
     </div>
     
@@ -214,7 +214,7 @@ require __DIR__ . '/header.php';
   <div class="container">
     <div class="section-head reveal" style="margin:0 auto 50px;text-align:center;">
       <div class="eyebrow">Elles témoignent</div>
-      <h2>La confiance de nos patientes</h2>
+      <h2>La confiance de nos <strong>patientes</strong></h2>
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card reveal">
