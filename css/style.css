@@ -2307,7 +2307,7 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
    Lasers/Skincare. Remplace .cat-hero-wow (laissé en place,
    inutilisé, pas besoin de le supprimer).
    ============================================================ */
-.cat-split-hero{background:var(--blanc-casse);padding:150px 0 100px;overflow:hidden;}
+.cat-split-hero{background:var(--blanc);padding:70px 0 80px;overflow:hidden;min-height:82vh;display:flex;align-items:center;}
 .csh-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 
 .csh-text{position:relative;z-index:1;}
@@ -2364,7 +2364,7 @@ nav#mainNav.open::before{opacity:1;visibility:visible;}
 .csh-plate b{display:block;font-family:'Poppins',sans-serif;font-weight:500;font-size:0.98rem;line-height:1.4;color:var(--blanc);}
 
 @media (max-width:900px){
-  .cat-split-hero{padding:100px 0 60px;}
+  .cat-split-hero{padding:50px 0 40px;min-height:auto;}
   .csh-grid{grid-template-columns:1.15fr 1fr;gap:24px;align-items:center;}
   .csh-title{font-size:1.6rem;max-width:100%;}
   .csh-tagline{font-size:1rem;max-width:100%;}
